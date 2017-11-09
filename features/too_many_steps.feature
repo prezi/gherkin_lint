@@ -38,7 +38,7 @@ Feature: Too Many Steps
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TooManySteps - Used 12 Steps
+      TooManySteps - Used 20 Steps
         lint.feature (2): Test.A
 
       """

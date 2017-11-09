@@ -25,7 +25,7 @@ Feature: File Name Differs Feature Name
     When I run `ruby lint.rb "lint.feature"`
     Then it should fail with exactly:
       """
-      FileNameDiffersFeatureName - Feature name should be 'Lint'
+      FileNameDiffersFeatureName (Warning) - Feature name should be 'Lint'
         lint.feature (1): Test
 
       """

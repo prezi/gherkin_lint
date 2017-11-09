@@ -8,7 +8,7 @@ module GherkinLint
         when_steps = scenario[:steps].select { |step| step[:keyword] == 'When ' }
         next unless when_steps.empty?
         references = [reference(file, feature, scenario)]
-        add_error(references, 'No \'When\'-Step')
+        add_warning(references, 'No \'When\'-Step')
       end
     end
   end

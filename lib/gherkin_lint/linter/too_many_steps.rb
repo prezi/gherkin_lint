@@ -5,7 +5,7 @@ module GherkinLint
   class TooManySteps < Linter
     def lint
       filled_scenarios do |file, feature, scenario|
-        next if scenario[:steps].length < 10
+        next if scenario[:steps].length < 20
         references = [reference(file, feature, scenario)]
         add_error(references, "Used #{scenario[:steps].length} Steps")
       end

@@ -1,4 +1,4 @@
-Feature: Keep the depth of detail low
+Feature: Prezi avoid sentences starting with
 
   Background: Prepare Testee
     Given a file named "lint.rb" with:
@@ -7,7 +7,7 @@ Feature: Keep the depth of detail low
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidSentencesStartingWith)
+      linter.enable %w(AvoidSentencesContaining)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -27,14 +27,14 @@ Feature: Keep the depth of detail low
     When I run `ruby lint.rb`
     Then it should pass with exactly:
       """
-      AvoidSentencesStartingWith (Warning) - avoid steps starting with "I click...", "I see...", "I should...", "I go to..."
+      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
         lint.feature (3): Test.A step: I click on button 1
-      AvoidSentencesStartingWith (Warning) - avoid steps starting with "I click...", "I see...", "I should...", "I go to..."
+      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
         lint.feature (4): Test.A step: I see button 2
-      AvoidSentencesStartingWith (Warning) - avoid steps starting with "I click...", "I see...", "I should...", "I go to..."
-        lint.feature (4): Test.A step: I should be redirected to page 3
-      AvoidSentencesStartingWith (Warning) - avoid steps starting with "I click...", "I see...", "I should...", "I go to..."
-        lint.feature (4): Test.A step: I go to the redirected page 4
+      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
+        lint.feature (5): Test.A step: I should be redirected to page 3
+      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
+        lint.feature (6): Test.A step: I go to the redirected page 4
 
       """
 

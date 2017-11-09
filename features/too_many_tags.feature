@@ -20,15 +20,15 @@ Feature: Too Many Tags
   Scenario: Many Tags
     Given a file named "lint.feature" with:
       """
-      @A
+      @A @B
       Feature: Test
-        @B @C
+        @C @D @E @F
         Scenario: A
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TooManyTags - Used 3 Tags
+      TooManyTags - Used 7 Tags
         lint.feature (4): Test.A
 
       """

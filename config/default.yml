@@ -3,7 +3,7 @@ AvoidOutlineForSingleExample:
 AvoidPeriod:
     Enabled: true
 AvoidScripting:
-    Enabled: true
+    Enabled: false
 BackgroundDoesMoreThanSetup:
     Enabled: true
 BackgroundRequiresMultipleScenarios:
@@ -17,7 +17,7 @@ FileNameDiffersFeatureName:
 MissingExampleName:
     Enabled: true
 MissingFeatureDescription:
-    Enabled: true
+    Enabled: false
 MissingFeatureName:
     Enabled: true
 MissingScenarioName:
@@ -30,6 +30,8 @@ InvalidFileName:
     Enabled: true
 InvalidStepFlow:
     Enabled: true
+AvoidSentencesContaining:
+    Enabled: true
 RequiredTagsStartsWith:
     Enabled: false
 SameTagForAllScenarios:
@@ -37,7 +39,7 @@ SameTagForAllScenarios:
 TagUsedMultipleTimes:
     Enabled: true
 TooClumsy:
-    Enabled: true
+    Enabled: false
 TooManyDifferentTags:
     Enabled: true
 TooManySteps:

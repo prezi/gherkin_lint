@@ -42,6 +42,8 @@ def disable_linters
       Enabled: false
   InvalidStepFlow:
       Enabled: false
+  AvoidSentencesContaining:
+      Enabled: false
   RequiredTagsStartsWith:
       Enabled: false
   SameTagForAllScenarios:

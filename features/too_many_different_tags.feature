@@ -42,9 +42,9 @@ Feature: Too Many Different Tags
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TooManyDifferentTags - Used 12 Tags within single Feature
+      TooManyDifferentTags - Used 7 Tags within single Feature
         lint.feature (1): Test
-      TooManyDifferentTags - Used 12 Tags across all Features
+      TooManyDifferentTags - Used 7 Tags across all Features
         lint.feature (1): Test
 
       """
