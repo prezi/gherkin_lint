@@ -28,7 +28,7 @@ Feature: Too Many Tags
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TooManyTags - Used 8 Tags
+      TooManyTags - Used 6 Tags
         lint.feature (4): Test.A
 
       """

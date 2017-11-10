@@ -13,7 +13,7 @@ BadScenarioName:
 BeDeclarative:
     Enabled: true
 FileNameDiffersFeatureName:
-    Enabled: true
+    Enabled: false
 MissingExampleName:
     Enabled: true
 MissingFeatureDescription:
