@@ -11,23 +11,36 @@ module GherkinLint
       scenarios do |file, feature, scenario|
         next unless scenario.key? :examples
         scenario[:examples].each do |example|
-          next unless example.key? :tableBody
-          example[:tableBody].each do |body|
-            next unless body.key? :cells
-            body[:cells].each do |cell|
-              if body[:cells].empty?
-                references = [reference(file, feature, scenario)]
-                add_error(references, "Outline example is empty")
-              end
+          next unless example.key? :tableHeader
 
-              value = cell[:value].delete "\s\n"
-              unless value.match(/^[[:alpha:]]+$/)
+          headers = example[:tableHeader][:cells].map { |cell| cell[:value] }
+          headers.each do |value|
+            if value_contains_non_alpha(value)
+              references = [reference(file, feature, scenario)]
+              add_error(references, "Outline example header contains character '#{value}'")
+            end
+          end
+
+          example[:tableBody].each do |row|
+            body = row[:cells].map { |cell| cell[:value] }
+            body.each do |value|
+              if value_contains_non_alpha(value)
                 references = [reference(file, feature, scenario)]
-                add_error(references, "Outline example contains character '#{value}'")
+                add_error(references, "Outline example cell contains character '#{value}'")
               end
             end
           end
         end
+      end
+    end
+
+    def value_contains_non_alpha(value)
+      if value.nil?
+        return false
+      end
+      value = value.delete "\s\n"
+      unless value.match(/^[[:alpha:]]+$/)
+        return true
       end
     end
   end
