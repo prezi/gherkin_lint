@@ -26,7 +26,7 @@ Feature: Bad Scenario Name
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      BadScenarioName - avoid scenario names containing with "test", "verify", "check"
+      BadScenarioName - Avoid scenario names containing with "test", "verify", "check"
         lint.feature (2): Test.<bad word> something
 
       """
