@@ -14,11 +14,11 @@ def disable_linters
       Enabled: false  
   AvoidOutlineForSingleExample:
       Enabled: false
-  AvoidSentencesContaining:
-      Enabled: false
   AvoidPeriod:
       Enabled: false
   AvoidQuotes:
+      Enabled: false
+  AvoidSentencesContaining:
       Enabled: false
   AvoidScripting:
       Enabled: false
