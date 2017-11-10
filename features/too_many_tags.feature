@@ -22,7 +22,7 @@ Feature: Too Many Tags
       """
       @A
       Feature: Test
-        @C @D
+        @B @C
         Scenario: A
       """
     When I run `ruby lint.rb`
