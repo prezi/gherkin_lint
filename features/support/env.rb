@@ -18,6 +18,8 @@ def disable_linters
       Enabled: false
   AvoidPeriod:
       Enabled: false
+  AvoidQuotes:
+      Enabled: false
   AvoidScripting:
       Enabled: false
   BackgroundDoesMoreThanSetup:
@@ -38,6 +40,8 @@ def disable_linters
       Enabled: false
   MissingScenarioName:
       Enabled: false
+  MissingTags:
+      Enabled: false  
   MissingTestAction:
       Enabled: false
   MissingVerification:

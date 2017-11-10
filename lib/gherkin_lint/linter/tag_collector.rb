@@ -12,7 +12,7 @@ module GherkinLint
           end
         end
       end
-      return tags
+      tags
     end
 
     def gather_feature_switches(element)
@@ -26,7 +26,7 @@ module GherkinLint
           end
         end
       end
-      return tags
+      tags
     end
   end
 end

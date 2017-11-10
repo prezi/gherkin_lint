@@ -1,0 +1,23 @@
+require 'gherkin_lint/linter'
+require 'engtagger'
+
+module GherkinLint
+  class AvoidQuotes < Linter
+    def initialize
+      super
+    end
+
+    def lint
+      filled_scenarios do |file, feature, scenario|
+        scenario[:steps].each do |step|
+          references = [reference(file, feature, scenario, step)]
+          description = 'Avoid using quotes in steps'
+          quotes = %w[" ']
+          quotes.each do |quote|
+            add_warning(references, description) if step[:text].include? quote
+          end
+        end
+      end
+    end
+  end
+end

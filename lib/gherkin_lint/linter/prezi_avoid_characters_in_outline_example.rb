@@ -42,6 +42,7 @@ module GherkinLint
       unless value.match(/^[[:alpha:]]+$/)
         return true
       end
+      false
     end
   end
 end

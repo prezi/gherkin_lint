@@ -6,6 +6,8 @@ AvoidPeriod:
     Enabled: true
 AvoidSentencesContaining:
     Enabled: true
+AvoidQuotes:
+    Enabled: true
 AvoidScripting:
     Enabled: false
 BackgroundDoesMoreThanSetup:
@@ -26,6 +28,8 @@ MissingFeatureName:
     Enabled: true
 MissingScenarioName:
     Enabled: true
+MissingTags:
+      Enabled: true
 MissingTestAction:
     Enabled: true
 MissingVerification:

@@ -35,7 +35,7 @@ Feature: Prezi avoid characters in outline example
       """
       AvoidCharactersInOutlineExample - Outline example contains character '-'
         lint.feature (2): Test.A
-      AvoidCharactersInOutlineExample - Outline example is empty
+      AvoidCharactersInOutlineExample - Outline example contains character ''
         lint.feature (2): Test.A
       AvoidCharactersInOutlineExample - Outline example contains character '@'
         lint.feature (2): Test.A
