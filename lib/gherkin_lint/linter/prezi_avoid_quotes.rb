@@ -7,7 +7,7 @@ module GherkinLint
     end
 
     def lint
-      filled_scenarios do |file, feature, scenario|
+      scenarios do |file, feature, scenario|
         scenario[:steps].each do |step|
           references = [reference(file, feature, scenario, step)]
           description = 'Avoid using quotes in steps'
