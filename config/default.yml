@@ -1,6 +1,10 @@
+AvoidCharactersInOutlineExample:
+    Enabled: true
 AvoidOutlineForSingleExample:
     Enabled: true
 AvoidPeriod:
+    Enabled: true
+AvoidSentencesContaining:
     Enabled: true
 AvoidScripting:
     Enabled: false
@@ -29,8 +33,6 @@ MissingVerification:
 InvalidFileName:
     Enabled: true
 InvalidStepFlow:
-    Enabled: true
-AvoidSentencesContaining:
     Enabled: true
 RequiredTagsStartsWith:
     Enabled: false

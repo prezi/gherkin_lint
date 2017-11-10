@@ -10,7 +10,11 @@ end
 
 def disable_linters
   <<-content
+  AvoidCharactersInOutlineExample:
+      Enabled: false  
   AvoidOutlineForSingleExample:
+      Enabled: false
+  AvoidSentencesContaining:
       Enabled: false
   AvoidPeriod:
       Enabled: false
@@ -41,8 +45,6 @@ def disable_linters
   InvalidFileName:
       Enabled: false
   InvalidStepFlow:
-      Enabled: false
-  AvoidSentencesContaining:
       Enabled: false
   RequiredTagsStartsWith:
       Enabled: false
