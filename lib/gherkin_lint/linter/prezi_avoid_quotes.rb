@@ -1,5 +1,4 @@
 require 'gherkin_lint/linter'
-require 'engtagger'
 
 module GherkinLint
   class AvoidQuotes < Linter
