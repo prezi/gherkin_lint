@@ -41,7 +41,7 @@ TagUsedMultipleTimes:
 TooClumsy:
     Enabled: false
 TooManyDifferentTags:
-    Enabled: true
+    Enabled: false
 TooManySteps:
     Enabled: true
 TooManyTags:
@@ -57,4 +57,4 @@ UnusedVariable:
 UseBackground:
     Enabled: true
 UseOutline:
-    Enabled: true
+    Enabled: false

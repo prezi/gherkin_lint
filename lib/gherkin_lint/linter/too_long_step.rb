@@ -5,7 +5,7 @@ module GherkinLint
   class TooLongStep < Linter
     def lint
       steps do |file, feature, scenario, step|
-        next if step[:text].length < 120
+        next if step[:text].length < 112
         references = [reference(file, feature, scenario, step)]
         add_error(references, "Used #{step[:text].length} characters")
       end

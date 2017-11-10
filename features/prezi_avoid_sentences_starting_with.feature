@@ -27,13 +27,13 @@ Feature: Prezi avoid sentences starting with
     When I run `ruby lint.rb`
     Then it should pass with exactly:
       """
-      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
+      AvoidSentencesContaining - Avoid steps containing with "I click...", "I see...", "I should...", "I go to...", "I fill"
         lint.feature (3): Test.A step: I click on button 1
-      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
+      AvoidSentencesContaining - Avoid steps containing with "I click...", "I see...", "I should...", "I go to...", "I fill"
         lint.feature (4): Test.A step: I see button 2
-      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
+      AvoidSentencesContaining - Avoid steps containing with "I click...", "I see...", "I should...", "I go to...", "I fill"
         lint.feature (5): Test.A step: I should be redirected to page 3
-      AvoidSentencesContaining - avoid steps containing with "I click...", "I see...", "I should...", "I go to..."
+      AvoidSentencesContaining - Avoid steps containing with "I click...", "I see...", "I should...", "I go to...", "I fill"
         lint.feature (6): Test.A step: I go to the redirected page 4
 
       """
