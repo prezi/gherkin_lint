@@ -10,7 +10,7 @@ module GherkinLint
     end
 
     def lint
-      scenarios do |file, feature, scenario|
+      background_and_scenarios do |file, feature, scenario|
         tag_locations = gather_tag_locations(feature).map { |tag|  tag[:location]}.compact + gather_tag_locations(scenario).map { |tag|  tag[:location]}.compact
         last_tag_locations = tag_locations.max
 

@@ -38,6 +38,7 @@ module GherkinLint
         return false
       end
       value = value.delete "\s\n"
+      value = value.tr("0-9", "")
       unless value.match(/^[[:alpha:]]+$/)
         return true
       end

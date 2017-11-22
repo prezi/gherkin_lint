@@ -10,24 +10,13 @@ module GherkinLint
     end
 
     def lint
-      scenarios do |file, feature, scenario|
+      background_and_scenarios do |file, feature, scenario|
         scenario[:steps].each do |step|
           references = [reference(file, feature, scenario, step)]
           description = 'Avoid enabling/disabling feature switches in steps'
           bad_words = %w[enable disable]
           bad_words.each do |bad_word|
             add_warning(references, description) if step[:text].include? bad_word
-          end
-        end
-
-        backgrounds do |file, feature, background|
-          background[:steps].each do |step|
-            references = [reference(file, feature, scenario, step)]
-            description = 'Avoid enabling/disabling feature switches in steps'
-            bad_words = %w[enable disable]
-            bad_words.each do |bad_word|
-              add_warning(references, description) if step[:text].include? bad_word
-            end
           end
         end
 

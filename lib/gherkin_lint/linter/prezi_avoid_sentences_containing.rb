@@ -7,7 +7,7 @@ module GherkinLint
     end
 
     def lint
-      scenarios do |file, feature, scenario|
+      background_and_scenarios do |file, feature, scenario|
         scenario[:steps].each do |step|
           references = [reference(file, feature, scenario, step)]
           description = 'Avoid steps containing with "I click...", "I see...", "I should...", "I go to...", "I fill"'

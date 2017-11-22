@@ -34,6 +34,12 @@ module GherkinLint
       end
     end
 
+    def background_and_scenarios
+      elements do |file, feature, scenario|
+        yield(file, feature, scenario)
+      end
+    end
+
     def filled_scenarios
       scenarios do |file, feature, scenario|
         next unless scenario.include? :steps
