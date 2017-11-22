@@ -5,25 +5,31 @@ module GherkinLint
   class UseGivenWhenThenOnce < Linter
     def lint
       filled_scenarios do |file, feature, scenario|
-        steps = scenario[:steps].map { |step| step[:keyword] == 'Given' }
+        counts = Hash.new 0
 
-        if steps.uniq.length > 1
-          references = [reference(file, feature, scenario)]
-          add_error(references, 'Multiple Given steps.')
+        backgrounds do |file, feature, background|
+          background[:steps].map { |step| counts['Given'] += 1 if step[:keyword] == 'Given ' }.compact
+          background[:steps].map { |step| counts['When'] += 1 if step[:keyword] == 'When ' }.compact
+          background[:steps].map { |step| counts['Then'] += 1 if step[:keyword] == 'Then ' }.compact
         end
 
-        steps = scenario[:steps].map { |step| step[:keyword] == 'When' }
+        scenario[:steps].map { |step| counts['Given'] += 1 if step[:keyword] == 'Given ' }.compact
+        scenario[:steps].map { |step| counts['When'] += 1 if step[:keyword] == 'When ' }.compact
+        scenario[:steps].map { |step| counts['Then'] += 1 if step[:keyword] == 'Then ' }.compact
 
-        if steps.uniq.length > 1
+        if counts['Given'] > 1
           references = [reference(file, feature, scenario)]
-          add_error(references, 'Multiple When steps.')
+          add_error(references, 'Multiple Given steps')
         end
 
-        steps = scenario[:steps].map { |step| step[:keyword] == 'Then' }
-
-        if steps.uniq.length > 1
+        if counts['When'] > 1
           references = [reference(file, feature, scenario)]
-          add_error(references, 'Multiple Then steps.')
+          add_error(references, 'Multiple When steps')
+        end
+
+        if counts['Then'] > 1
+          references = [reference(file, feature, scenario)]
+          add_error(references, 'Multiple Then steps')
         end
       end
     end

@@ -15,14 +15,14 @@ module GherkinLint
 
         tag_locations = gather_tag_locations(feature).map { |tag|  tag[:location]}.compact
 
-        if tag_locations.uniq.length >= 1 and tag_locations.length > 1
-          add_error(references, "One tag per line.")
+        if tag_locations.uniq.length == 1 and tag_locations.length > 1
+          add_error(references, "One tag per line")
         end
 
-        tag_locations = gather_fs_locations(feature).map { |tag|  tag[:location]}.compact
+        fs_locations = gather_fs_locations(feature).map { |tag|  tag[:location]}.compact
 
-        if tag_locations.uniq.length >= 1 and tag_locations.length > 1
-          add_error(references, "One feature switch per line.")
+        if fs_locations.uniq.length == 1 and fs_locations.length > 1
+          add_error(references, "One feature switch per line")
         end
       end
     end

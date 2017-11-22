@@ -19,14 +19,14 @@ module GherkinLint
         tags = gather_fs_locations(feature)
         tags.each do |tag|
           if last_tag_locations > tag[:location]
-            add_error(references, "@#{tag[:name]} not enabled/disabled after tags.")
+            add_error(references, "@#{tag[:name]} not enabled/disabled after tags")
           end
         end
 
         tags = gather_fs_locations(scenario)
         tags.each do |tag|
           if last_tag_locations > tag[:location]
-            add_error(references, "@#{tag[:name]} not enabled/disabled after tags.")
+            add_error(references, "@#{tag[:name]} not enabled/disabled after tags")
           end
         end
       end

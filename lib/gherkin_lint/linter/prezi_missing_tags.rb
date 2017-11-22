@@ -23,13 +23,13 @@ module GherkinLint
         end
 
         if platforms.length == 5
-          references = [reference(file, feature, scenario)]
+          references = [reference(file)]
           add_error(references, 'Missing platform tag')
         end
 
         teams = tags.map { |tag| tag.start_with?('team') }
         if teams.count(true) == 0
-          references = [reference(file, feature, scenario)]
+          references = [reference(file)]
           add_error(references, 'Missing team tag')
         end
       end
