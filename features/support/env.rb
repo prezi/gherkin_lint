@@ -56,6 +56,10 @@ def disable_linters
       Enabled: false
   SameTagForAllScenarios:
       Enabled: false
+  TagsFeatureSwitchOrder:
+      Enabled: false
+  TagsOnSeperateLines:
+      Enabled: false
   TagUsedMultipleTimes:
       Enabled: false
   TooClumsy:
@@ -75,6 +79,8 @@ def disable_linters
   UnusedVariable:
       Enabled: false
   UseBackground:
+      Enabled: false
+  UseGivenWhenThenOnce:
       Enabled: false
   UseOutline:
       Enabled: false

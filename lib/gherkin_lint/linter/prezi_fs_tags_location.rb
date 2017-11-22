@@ -21,10 +21,6 @@ module GherkinLint
         end
 
         feature_location = feature[:location][:line]
-
-        tag_locations = gather_tag_locations(feature).map { |tag|  tag[:location]}.compact + gather_tag_locations(scenario).map { |tag|  tag[:location]}.compact
-        last_tag_locations = tag_locations.max
-
         references = [reference(file, feature, scenario)]
 
         tags = gather_tag_locations(feature)
@@ -46,18 +42,12 @@ module GherkinLint
           if feature_location < tag[:location]
             add_error(references, "@#{tag[:name]} not enabled/disabled at top of the page.")
           end
-          if last_tag_locations > tag[:location]
-            add_error(references, "@#{tag[:name]} not enabled/disabled after tags.")
-          end
         end
 
         tags = gather_fs_locations(scenario)
         tags.each do |tag|
           if feature_location < tag[:location]
             add_error(references, "@#{tag[:name]} not enabled/disabled at top of the page.")
-          end
-          if last_tag_locations > tag[:location]
-            add_error(references, "@#{tag[:name]} not enabled/disabled after tags.")
           end
         end
       end

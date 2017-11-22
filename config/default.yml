@@ -44,6 +44,10 @@ RequiredTagsStartsWith:
     Enabled: false
 SameTagForAllScenarios:
     Enabled: true
+TagsFeatureSwitchOrder:
+    Enabled: true
+TagsOnSeperateLines:
+    Enabled: true
 TagUsedMultipleTimes:
     Enabled: true
 TooClumsy:
@@ -63,6 +67,8 @@ UnknownVariable:
 UnusedVariable:
     Enabled: true
 UseBackground:
+    Enabled: true
+UseGivenWhenThenOnce:
     Enabled: true
 UseOutline:
     Enabled: false
