@@ -12,8 +12,10 @@ module GherkinLint
           references = [reference(file, feature, scenario, step)]
           description = 'Avoid using quotes in steps'
           quotes = %w[" ']
+          counts = Hash.new 0
           quotes.each do |quote|
-            add_warning(references, description) if step[:text].include? quote
+            add_warning(references, description) if step[:text].scan(/(?=#{quote})/).count > 1
+            counts[quote] += 1 if step[:text].include? quote
           end
         end
       end

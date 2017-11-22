@@ -18,6 +18,8 @@ BadScenarioName:
     Enabled: true
 BeDeclarative:
     Enabled: true
+FeatureSwitchInsideFeature:
+    Enabled: true
 FileNameDiffersFeatureName:
     Enabled: false
 MissingExampleName:

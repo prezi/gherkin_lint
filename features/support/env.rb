@@ -30,6 +30,8 @@ def disable_linters
       Enabled: false
   BeDeclarative:
       Enabled: false
+  FeatureSwitchInsideFeature:
+      Enabled: false
   FileNameDiffersFeatureName:
       Enabled: false
   MissingExampleName:
