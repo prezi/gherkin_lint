@@ -2,6 +2,7 @@ require 'gherkin_lint/linter'
 require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
+  # service class to lint for invalid tag/fs order
   class TagsFeatureSwitchOrder < Linter
     include TagCollector
 
@@ -11,7 +12,9 @@ module GherkinLint
 
     def lint
       background_and_scenarios do |file, feature, scenario|
-        tag_locations = gather_tag_locations(feature).map { |tag|  tag[:location]}.compact + gather_tag_locations(scenario).map { |tag|  tag[:location]}.compact
+        tag_locations_locations = gather_tag_locations(feature).map { |tag| tag[:location] }.compact
+        tag_locations_scenario = gather_tag_locations(scenario).map { |tag| tag[:location] }.compact
+        tag_locations = tag_locations_locations + tag_locations_scenario
         last_tag_locations = tag_locations.max
 
         references = [reference(file, feature, scenario)]
@@ -31,6 +34,5 @@ module GherkinLint
         end
       end
     end
-
   end
 end

@@ -2,6 +2,7 @@ require 'gherkin_lint/linter'
 require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
+  # service class to lint for missing tags
   class MissingTags < Linter
     include TagCollector
 
@@ -28,12 +29,11 @@ module GherkinLint
         end
 
         teams = tags.map { |tag| tag.start_with?('team') }
-        if teams.count(true) == 0
+        if teams.count(true).zero?
           references = [reference(file)]
           add_error(references, 'Missing team tag')
         end
       end
-
     end
   end
 end

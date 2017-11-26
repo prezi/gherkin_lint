@@ -11,7 +11,7 @@ end
 def disable_linters
   <<-content
   AvoidCharactersInOutlineExample:
-      Enabled: false  
+      Enabled: false
   AvoidOutlineForSingleExample:
       Enabled: false
   AvoidPeriod:
@@ -43,7 +43,7 @@ def disable_linters
   MissingScenarioName:
       Enabled: false
   MissingTags:
-      Enabled: false  
+      Enabled: false
   MissingTestAction:
       Enabled: false
   MissingVerification:

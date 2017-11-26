@@ -1,11 +1,11 @@
 require 'gherkin_lint/linter'
 
 module GherkinLint
-  # service class to lint for avoid scripting
+  # service class to lint for invalid steps
   class UseGivenWhenThenOnce < Linter
     def lint
       counts_background = Hash.new 0
-      background_and_scenarios do |file, feature, scenario, steps|
+      background_and_scenarios do |file, feature, scenario|
         counts = Hash.new 0
         if scenario[:type] == :Background
           scenario[:steps].map { |step| counts_background['Given'] += 1 if step[:keyword] == 'Given ' }.compact

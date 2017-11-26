@@ -2,6 +2,7 @@ require 'gherkin_lint/linter'
 require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
+  # service class to lint for invalid feature switch location
   class FeatureSwitchInsideFeature < Linter
     include TagCollector
 
@@ -53,6 +54,5 @@ module GherkinLint
         end
       end
     end
-
   end
 end

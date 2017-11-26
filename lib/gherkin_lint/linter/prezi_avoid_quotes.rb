@@ -1,6 +1,7 @@
 require 'gherkin_lint/linter'
 
 module GherkinLint
+  # service class to lint for avoiding quotes
   class AvoidQuotes < Linter
     def initialize
       super

@@ -1,6 +1,7 @@
 require 'gherkin_lint/linter'
 
 module GherkinLint
+  # service class to lint for invalid characters in outline
   class AvoidCharactersInOutlineExample < Linter
     def initialize
       super
@@ -38,7 +39,7 @@ module GherkinLint
         return false
       end
       value = value.delete "\s\n"
-      value = value.tr("0-9", "")
+      value = value.tr('0-9', '')
       unless value.match(/^[[:alpha:]]+$/)
         return true
       end
