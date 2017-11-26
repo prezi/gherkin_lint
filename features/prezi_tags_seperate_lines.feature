@@ -56,4 +56,3 @@ Feature: Avoid characters in the outline
     Then it should pass with exactly:
       """
       """
-ß
