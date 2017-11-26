@@ -26,9 +26,9 @@ Feature: Missing Test Action
           Then verification
       """
     When I run `ruby lint.rb`
-    Then it should fail with exactly:
+    Then it should pass with exactly:
       """
-      MissingTestAction - No 'When'-Step
+      MissingTestAction (Warning) - No 'When'-Step
         lint.feature (2): Test.A
 
       """

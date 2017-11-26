@@ -1,7 +1,3 @@
-@disableUnknownVariable
-@disableAvoidQuotes
-@disableUseGivenWhenThenOnce
-@disableMissingTags
 Feature: Avoid characters in the outline
 
   Background: Prepare Testee
@@ -19,7 +15,7 @@ Feature: Avoid characters in the outline
 
       """
 
-  Scenario: Steps With Period
+  Scenario: Examples containing characters
     Given a file named "lint.feature" with:
       """
       Feature: Test
@@ -34,7 +30,7 @@ Feature: Avoid characters in the outline
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      AvoidCharactersInOutlineExample - Better write a scenario
+      AvoidCharactersInOutlineExample - Outline example header contains character 'A_'
         lint.feature (2): Test.A
 
       """

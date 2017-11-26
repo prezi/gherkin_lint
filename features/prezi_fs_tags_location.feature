@@ -1,56 +1,61 @@
-@disableUnknownVariable
-@disableAvoidQuotes
-@disableUseGivenWhenThenOnce
-@disableMissingTags
-Feature: Avoid characters in the outline
+Feature: Feature switches at top of file
 
   Background: Prepare Testee
 
-    Given a file named "lint.rb" with:
+  Given a file named "lint.rb" with:
       """
       $LOAD_PATH << '../../lib'
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidCharactersInOutlineExample)
+      linter.enable %w(FeatureSwitchInsideFeature)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
 
       """
 
-  Scenario: Steps With Period
+  Scenario: FS ensbled inside Feature
     Given a file named "lint.feature" with:
       """
       Feature: Test
-        Scenario Outline: A
-          When <A>
-          Then <B>
-
-        Examples: Invalid
-          | A | B |
-          | a | b |
+      @enable-fs-C
+      Scenario: A
+        When step 1
+        Then Step 2
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      AvoidCharactersInOutlineExample - Better write a scenario
-        lint.feature (2): Test.A
+      FeatureSwitchInsideFeature - @enable-fs-C not enabled/disabled at top of the page
+        lint.feature (3): Test.A
+
+       """
+
+  Scenario: FS ensbled inside Feature inside step
+    Given a file named "lint.feature" with:
+      """
+      Feature: Test
+        Scenario: A
+          When enable feature switch
+          Then Step 2
+      """
+    When I run `ruby lint.rb`
+    Then it should fail with exactly:
+      """
+      FeatureSwitchInsideFeature - Avoid enabling/disabling feature switches in steps
+        lint.feature (3): Test.A step: enable feature switch
 
       """
 
   Scenario: Valid Example
     Given a file named "lint.feature" with:
       """
+      @enable-fs-C
       Feature: Test
-        Scenario Outline: A
-          When <A>
-          Then <B>
-
-        Examples: Invalid
-          | A | B |
-          | a | b |
-          | c | d |
+        Scenario: A
+          When step 1
+          Then Step 2
       """
     When I run `ruby lint.rb`
     Then it should pass with exactly:

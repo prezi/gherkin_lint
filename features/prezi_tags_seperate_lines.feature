@@ -1,8 +1,4 @@
-@disableUnknownVariable
-@disableAvoidQuotes
-@disableUseGivenWhenThenOnce
-@disableMissingTags
-Feature: Avoid characters in the outline
+Feature: Tags on separate lines
 
   Background: Prepare Testee
 
@@ -12,7 +8,7 @@ Feature: Avoid characters in the outline
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidCharactersInOutlineExample)
+      linter.enable %w(TagsOnSeperateLines)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -22,35 +18,30 @@ Feature: Avoid characters in the outline
   Scenario: Steps With Period
     Given a file named "lint.feature" with:
       """
+      @A @B @C
       Feature: Test
-        Scenario Outline: A
-          When <A>
-          Then <B>
-
-        Examples: Invalid
-          | A | B |
-          | a | b |
+        Scenario: A
+          When step 1
+          Then Step 2
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      AvoidCharactersInOutlineExample - Better write a scenario
-        lint.feature (2): Test.A
+      TagsOnSeperateLines - One tag per line
+        lint.feature
 
       """
 
   Scenario: Valid Example
     Given a file named "lint.feature" with:
       """
+      @A
+      @B
+      @C
       Feature: Test
-        Scenario Outline: A
-          When <A>
-          Then <B>
-
-        Examples: Invalid
-          | A | B |
-          | a | b |
-          | c | d |
+        Scenario: A
+          When step 1
+          Then Step 2
       """
     When I run `ruby lint.rb`
     Then it should pass with exactly:

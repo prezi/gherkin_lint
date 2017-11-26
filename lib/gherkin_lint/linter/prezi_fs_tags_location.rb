@@ -17,7 +17,7 @@ module GherkinLint
           description = 'Avoid enabling/disabling feature switches in steps'
           bad_words = %w[enable disable]
           bad_words.each do |bad_word|
-            add_warning(references, description) if step[:text].include? bad_word
+            add_error(references, description) if step[:text].include? bad_word
           end
         end
 

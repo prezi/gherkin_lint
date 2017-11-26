@@ -34,11 +34,19 @@ Feature: Too Many Steps
           But result shouldn't be 23
           And also not 42
           And probably also not 1337
+          And verification should be possible
+          But result shouldn't be 23
+          And also not 42
+          And probably also not 1337
+          And verification should be possible
+          But result shouldn't be 23
+          And also not 42
+          And probably also not 1337
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TooManySteps - Used 12 Steps
+      TooManySteps - Used 20 Steps
         lint.feature (2): Test.A
 
       """
