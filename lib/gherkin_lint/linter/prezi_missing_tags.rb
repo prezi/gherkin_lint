@@ -12,28 +12,31 @@ module GherkinLint
 
     def lint
       scenarios do |file, feature, scenario|
+        references = [reference(file)]
         tags = gather_tags(feature) + gather_tags(scenario)
 
-        platforms = %w[all-platforms desktop android iphone ipad]
-        platforms.each do |platform|
-          tags.each do |tag|
-            if tag.include? platform
-              platforms -= [platform]
-            end
-          end
-        end
+        _check_platform_tags(references, tags)
+        _check_team_tags(references, tags)
+      end
+    end
 
-        if platforms.length == 5
-          references = [reference(file)]
-          add_error(references, 'Missing platform tag')
-        end
-
-        teams = tags.map { |tag| tag.start_with?('team') }
-        if teams.count(true).zero?
-          references = [reference(file)]
-          add_error(references, 'Missing team tag')
+    def _check_platform_tags(references, tags)
+      platforms = %w[all-platforms desktop android iphone ipad]
+      platforms.each do |platform|
+        tags.each do |tag|
+          next unless tag.include? platform
+          platforms -= [platform]
         end
       end
+
+      return unless platforms.length == 5
+      add_error(references, 'Missing platform tag')
+    end
+
+    def _check_team_tags(references, tags)
+      teams = tags.map { |tag| tag.start_with?('team') }
+      return unless teams.count(true).zero?
+      add_error(references, 'Missing team tag')
     end
   end
 end

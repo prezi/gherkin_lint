@@ -13,19 +13,20 @@ module GherkinLint
     def lint
       features do |file, feature|
         references = [reference(file)]
+        description = 'One tag per line'
+        tag_locations = gather_tag_locations(feature).map { |tag| tag[:location] }.compact
+        _check_tag_locations(tag_locations, references, description)
 
-        tag_locations = gather_tag_locations(feature).map { |tag| tag[:location]}.compact
-
-        if tag_locations.uniq.length == 1 and tag_locations.length > 1
-          add_error(references, 'One tag per line')
-        end
-
-        fs_locations = gather_fs_locations(feature).map { |tag| tag[:location]}.compact
-
-        if fs_locations.uniq.length == 1 and fs_locations.length > 1
-          add_error(references, 'One feature switch per line')
-        end
+        references = [reference(file)]
+        description = 'One feature switch per line'
+        fs_locations = gather_fs_locations(feature).map { |tag| tag[:location] }.compact
+        _check_tag_locations(fs_locations, references, description)
       end
+    end
+
+    def _check_tag_locations(tag_locations, references, description)
+      return unless tag_locations.uniq.length == 1 && tag_locations.length > 1
+      add_error(references, description)
     end
   end
 end

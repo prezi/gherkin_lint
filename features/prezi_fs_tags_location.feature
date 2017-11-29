@@ -27,7 +27,7 @@ Feature: Feature switches at top of file
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      FeatureSwitchInsideFeature - @enable-fs-C not enabled/disabled at top of the page
+      FeatureSwitchInsideFeature - @enable-fs-C not at top of the page
         lint.feature (3): Test.A
 
        """

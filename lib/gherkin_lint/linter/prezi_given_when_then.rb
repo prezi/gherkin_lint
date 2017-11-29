@@ -4,34 +4,43 @@ module GherkinLint
   # service class to lint for invalid steps
   class UseGivenWhenThenOnce < Linter
     def lint
-      counts_background = Hash.new 0
       background_and_scenarios do |file, feature, scenario|
+        references = [reference(file, feature, scenario)]
         counts = Hash.new 0
+        counts[:background] = Hash.new 0
         if scenario[:type] == :Background
-          scenario[:steps].map { |step| counts_background['Given'] += 1 if step[:keyword] == 'Given ' }.compact
-          scenario[:steps].map { |step| counts_background['When'] += 1 if step[:keyword] == 'When ' }.compact
-          scenario[:steps].map { |step| counts_background['Then'] += 1 if step[:keyword] == 'Then ' }.compact
+          counts[:background] = _count_occurrences_in_scenario(scenario)
         else
-          scenario[:steps].map { |step| counts['Given'] += 1 if step[:keyword] == 'Given ' }.compact
-          scenario[:steps].map { |step| counts['When'] += 1 if step[:keyword] == 'When ' }.compact
-          scenario[:steps].map { |step| counts['Then'] += 1 if step[:keyword] == 'Then ' }.compact
+          counts[:scenario] = _count_occurrences_in_scenario(scenario)
         end
 
-        if counts['Given'] + counts_background['Given'] > 1
-          references = [reference(file, feature, scenario)]
-          add_error(references, 'Multiple Given steps')
-        end
-
-        if counts['When'] + counts_background['When'] > 1
-          references = [reference(file, feature, scenario)]
-          add_error(references, 'Multiple When steps')
-        end
-
-        if counts['Then'] + counts_background['Then'] > 1
-          references = [reference(file, feature, scenario)]
-          add_error(references, 'Multiple Then steps')
-        end
+        _iterate_over_steps(references, counts)
       end
+    end
+
+    def _count_occurrences_in_scenario(scenario)
+      counts = Hash.new 0
+      steps = %w[Given When Then]
+      steps.each do |starts_with|
+        _counter(scenario, counts, starts_with)
+      end
+      counts
+    end
+
+    def _counter(scenario, counts, starts_with)
+      scenario[:steps].map { |step| counts[starts_with] += 1 if step[:keyword] == starts_with + ' ' }.compact
+    end
+
+    def _iterate_over_steps(references, counts)
+      steps = %w[Given When Then]
+      steps.each do |starts_with|
+        _check_steps(references, counts, starts_with)
+      end
+    end
+
+    def _check_steps(references, counts, starts_with)
+      return unless counts[:scenario][starts_with] + counts[:background][starts_with] > 1
+      add_error(references, "Multiple #{starts_with} steps")
     end
   end
 end

@@ -12,45 +12,44 @@ module GherkinLint
 
     def lint
       background_and_scenarios do |file, feature, scenario|
-        scenario[:steps].each do |step|
-          references = [reference(file, feature, scenario, step)]
-          description = 'Avoid enabling/disabling feature switches in steps'
-          bad_words = %w[enable disable]
-          bad_words.each do |bad_word|
-            add_error(references, description) if step[:text].include? bad_word
-          end
+        _check_fs_tags_locations(file, feature, scenario)
+        _check_fs_inside_steps(file, feature, scenario)
+      end
+    end
+
+    def _check_fs_tags_locations(file, feature, scenario)
+      feature_location = feature[:location][:line]
+
+      references = [reference(file, feature, scenario)]
+      tag_locations = gather_tag_locations(feature)
+      _check_fs_tags_location(references, feature_location, tag_locations)
+
+      tag_locations = gather_tag_locations(scenario)
+      _check_fs_tags_location(references, feature_location, tag_locations)
+
+      references = [reference(file, feature, scenario)]
+      fs_locations = gather_fs_locations(feature)
+      _check_fs_tags_location(references, feature_location, fs_locations)
+
+      fs_locations = gather_fs_locations(scenario)
+      _check_fs_tags_location(references, feature_location, fs_locations)
+    end
+
+    def _check_fs_tags_location(references, feature_location, tag_locations)
+      tag_locations.each do |tag|
+        if feature_location < tag[:location]
+          add_error(references, "@#{tag[:name]} not at top of the page")
         end
+      end
+    end
 
-        # Todo: put the next section into a different rule
-        feature_location = feature[:location][:line]
-        references = [reference(file, feature, scenario)]
-
-        tag_locations = gather_tag_locations(feature)
-        tag_locations.each do |tag|
-          if feature_location < tag[:location]
-            add_error(references, "@#{tag[:name]} not at top of the page")
-          end
-        end
-
-        tag_locations = gather_tag_locations(scenario)
-        tag_locations.each do |tag|
-          if feature_location < tag[:location]
-            add_error(references, "@#{tag[:name]} not at top of the page")
-          end
-        end
-
-        fs_locations = gather_fs_locations(feature)
-        fs_locations.each do |fs|
-          if feature_location < fs[:location]
-            add_error(references, "@#{fs[:name]} not enabled/disabled at top of the page")
-          end
-        end
-
-        fs_locations = gather_fs_locations(scenario)
-        fs_locations.each do |fs|
-          if feature_location < fs[:location]
-            add_error(references, "@#{fs[:name]} not enabled/disabled at top of the page")
-          end
+    def _check_fs_inside_steps(file, feature, scenario)
+      scenario[:steps].each do |step|
+        references = [reference(file, feature, scenario, step)]
+        description = 'Avoid enabling/disabling feature switches in steps'
+        fs_words = %w[enable disable]
+        fs_words.each do |fs_word|
+          add_error(references, description) if step[:text].include? fs_word
         end
       end
     end

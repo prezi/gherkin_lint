@@ -13,12 +13,16 @@ module GherkinLint
 
     def gather_tag_locations(element)
       return {} unless element.include? :tags
-      element[:tags].map { |tag| {:name => tag[:name][1..-1], :location => tag[:location][:line]} unless tag[:name].include? '-fs' }.compact
+      element[:tags].map { |tag| _get_tag_dict(tag) unless tag[:name].include? '-fs' }.compact
     end
 
     def gather_fs_locations(element)
       return {} unless element.include? :tags
-      element[:tags].map { |tag| {:name => tag[:name][1..-1], :location => tag[:location][:line]} if tag[:name].include? '-fs' }.compact
+      element[:tags].map { |tag| _get_tag_dict(tag) if tag[:name].include? '-fs' }.compact
+    end
+
+    def _get_tag_dict(tag)
+      { :name => tag[:name][1..-1], :location => tag[:location][:line] }
     end
   end
 end

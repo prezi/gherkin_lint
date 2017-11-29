@@ -26,7 +26,7 @@ Feature: Avoid sentences containing bad words
     When I run `ruby lint.rb`
     Then it should pass with exactly:
       """
-      AvoidSentencesContaining (Warning) - Avoid steps containing with "I click...", "I see...", "I should...", "I go to...", "I fill"
+      AvoidSentencesContaining (Warning) - Avoid steps containing with "I click", "I see", "I should", "I go to", "I fill"
         lint.feature (4): Test.A step: I see the button
 
       """

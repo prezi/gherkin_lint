@@ -12,38 +12,38 @@ module GherkinLint
         next unless scenario.key? :examples
         scenario[:examples].each do |example|
           next unless example.key? :tableHeader
-
-          headers = example[:tableHeader][:cells].map { |cell| cell[:value] }
-          headers.each do |value|
-            if value_contains_non_alpha(value)
-              references = [reference(file, feature, scenario)]
-              add_error(references, "Outline example header contains character '#{value}'")
-            end
-          end
-
-          example[:tableBody].each do |row|
-            body = row[:cells].map { |cell| cell[:value] }
-            body.each do |value|
-              if value_contains_non_alpha(value)
-                references = [reference(file, feature, scenario)]
-                add_error(references, "Outline example cell contains character '#{value}'")
-              end
-            end
-          end
+          references = [reference(file, feature, scenario)]
+          _check_example_header(references, example)
+          _check_example_body(references, example)
         end
       end
     end
 
-    def value_contains_non_alpha(value)
-      if value.nil?
-        return false
-      end
+    def _value_contains_non_alpha(value)
+      return if value.nil?
       value = value.delete "\s\n"
       value = value.tr('0-9', '')
-      unless value.match(/^[[:alpha:]]+$/)
-        return true
+      true unless /^[[:alpha:]]+$/ =~ value
+    end
+
+    def _check_example_header(references, example)
+      headers = example[:tableHeader][:cells].map { |cell| cell[:value] }
+      headers.each do |value|
+        if _value_contains_non_alpha(value)
+          add_error(references, "Outline example header contains character '#{value}'")
+        end
       end
-      false
+    end
+
+    def _check_example_body(references, example)
+      example[:tableBody].each do |row|
+        body = row[:cells].map { |cell| cell[:value] }
+        body.each do |value|
+          if _value_contains_non_alpha(value)
+            add_error(references, "Outline example cell contains character '#{value}'")
+          end
+        end
+      end
     end
   end
 end
