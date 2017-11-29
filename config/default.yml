@@ -42,17 +42,17 @@ PreziFeatureSwitchInsideFeature:
     Enabled: true
 PreziFSOnSeparateLines:
     Enabled: true
-PreziTagsFeatureSwitchOrder:
-    Enabled: true
-PreziUseGivenWhenThenOnce:
-    Enabled: true
 PreziMissingPlatformTag:
       Enabled: true
 PreziMissingTeamTag:
       Enabled: true
+PreziTagsFeatureSwitchOrder:
+    Enabled: true
 PreziTagsInsideFeature:
     Enabled: true
 PreziTagsOnSeparateLines:
+    Enabled: true
+PreziUseGivenWhenThenOnce:
     Enabled: true
 RequiredTagsStartsWith:
     Enabled: false

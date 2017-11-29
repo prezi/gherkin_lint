@@ -54,17 +54,17 @@ def disable_linters
       Enabled: false
   PreziFSOnSeparateLines:
       Enabled: false
-  PreziTagsFeatureSwitchOrder:
-      Enabled: false
-  PreziUseGivenWhenThenOnce:
-      Enabled: false
   PreziMissingPlatformTag:
       Enabled: false
   PreziMissingTeamTag:
       Enabled: false
+  PreziTagsFeatureSwitchOrder:
+      Enabled: false
   PreziTagsInsideFeature:
       Enabled: false
   PreziTagsOnSeparateLines:
+      Enabled: false
+  PreziUseGivenWhenThenOnce:
       Enabled: false
   RequiredTagsStartsWith:
       Enabled: false
