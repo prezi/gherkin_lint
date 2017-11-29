@@ -68,5 +68,7 @@ Feature: Precedence
       """
       MissingTags - Missing platform tag
         lint.feature
+      MissingTags - Missing team tag
+        lint.feature
 
       """
