@@ -2,7 +2,7 @@ require 'gherkin_lint/linter'
 
 module GherkinLint
   # service class to lint for invalid steps
-  class UseGivenWhenThenOnce < Linter
+  class PreziUseGivenWhenThenOnce < Linter
     def lint
       background_and_scenarios do |file, feature, scenario|
         references = [reference(file, feature, scenario)]

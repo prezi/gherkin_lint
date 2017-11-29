@@ -3,7 +3,7 @@ require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
   # service class to lint for tags on separate lines
-  class TagsOnSeparateLines < Linter
+  class PreziTagsOnSeparateLines < Linter
     include TagCollector
 
     def initialize

@@ -3,7 +3,7 @@ require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
   # service class to lint for invalid tag/fs order
-  class TagsFeatureSwitchOrder < Linter
+  class PreziTagsFeatureSwitchOrder < Linter
     include TagCollector
 
     def initialize

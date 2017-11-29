@@ -1,10 +1,6 @@
-AvoidCharsInOutline:
-    Enabled: true
 AvoidOutlineForSingleExample:
     Enabled: true
 AvoidPeriod:
-    Enabled: true
-AvoidStepsContaining:
     Enabled: true
 AvoidQuotes:
     Enabled: true
@@ -18,12 +14,8 @@ BadScenarioName:
     Enabled: true
 BeDeclarative:
     Enabled: true
-FeatureSwitchInsideFeature:
-    Enabled: true
 FileNameDiffersFeatureName:
     Enabled: false
-FSOnSeparateLines:
-    Enabled: true
 MissingExampleName:
     Enabled: true
 MissingFeatureDescription:
@@ -32,10 +24,6 @@ MissingFeatureName:
     Enabled: true
 MissingScenarioName:
     Enabled: true
-MissingPlatformTag:
-      Enabled: true
-MissingTeamTag:
-      Enabled: true
 MissingTestAction:
     Enabled: true
 MissingVerification:
@@ -44,15 +32,31 @@ InvalidFileName:
     Enabled: true
 InvalidStepFlow:
     Enabled: true
+PreziAvoidCharsInOutline:
+    Enabled: true
+PreziAvoidQuotes:
+    Enabled: true
+PreziAvoidStepsContaining:
+    Enabled: true
+PreziFeatureSwitchInsideFeature:
+    Enabled: true
+PreziFSOnSeparateLines:
+    Enabled: true
+PreziTagsFeatureSwitchOrder:
+    Enabled: true
+PreziUseGivenWhenThenOnce:
+    Enabled: true
+PreziMissingPlatformTag:
+      Enabled: true
+PreziMissingTeamTag:
+      Enabled: true
+PreziTagsInsideFeature:
+    Enabled: true
+PreziTagsOnSeparateLines:
+    Enabled: true
 RequiredTagsStartsWith:
     Enabled: false
 SameTagForAllScenarios:
-    Enabled: true
-TagsFeatureSwitchOrder:
-    Enabled: true
-TagsInsideFeature:
-    Enabled: true
-TagsOnSeparateLines:
     Enabled: true
 TagUsedMultipleTimes:
     Enabled: true
@@ -73,8 +77,6 @@ UnknownVariable:
 UnusedVariable:
     Enabled: true
 UseBackground:
-    Enabled: true
-UseGivenWhenThenOnce:
     Enabled: true
 UseOutline:
     Enabled: false

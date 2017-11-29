@@ -8,7 +8,7 @@ Feature: Feature switches on separate lines
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(FSOnSeparateLines)
+      linter.enable %w(PreziFSOnSeparateLines)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -27,7 +27,7 @@ Feature: Feature switches on separate lines
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      FSOnSeparateLines - One feature switch per line
+      PreziFSOnSeparateLines - One feature switch per line
         lint.feature
 
       """
@@ -44,7 +44,7 @@ Feature: Feature switches on separate lines
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      FSOnSeparateLines - One feature switch per line
+      PreziFSOnSeparateLines - One feature switch per line
         lint.feature
 
       """

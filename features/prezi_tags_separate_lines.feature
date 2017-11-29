@@ -8,7 +8,7 @@ Feature: Tags on separate lines
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(TagsOnSeparateLines)
+      linter.enable %w(PreziTagsOnSeparateLines)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -27,7 +27,7 @@ Feature: Tags on separate lines
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TagsOnSeparateLines - One tag per line
+      PreziTagsOnSeparateLines - One tag per line
         lint.feature
 
       """

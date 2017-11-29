@@ -8,7 +8,7 @@ Feature: Feature switches at top of file
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(TagsInsideFeature)
+      linter.enable %w(PreziTagsInsideFeature)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -27,7 +27,7 @@ Feature: Feature switches at top of file
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TagsInsideFeature - @a not at top of the page
+      PreziTagsInsideFeature - @a not at top of the page
         lint.feature (3): Test.A
 
        """

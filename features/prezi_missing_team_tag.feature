@@ -7,7 +7,7 @@ Feature: Missing tags
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(MissingTeamTag)
+      linter.enable %w(PreziMissingTeamTag)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -25,7 +25,7 @@ Feature: Missing tags
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      MissingTeamTag - Missing team tag
+      PreziMissingTeamTag - Missing team tag
         lint.feature
 
       """

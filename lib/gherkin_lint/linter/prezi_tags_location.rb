@@ -3,7 +3,7 @@ require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
   # service class to lint for invalid feature switch location
-  class TagsInsideFeature < Linter
+  class PreziTagsInsideFeature < Linter
     include TagCollector
 
     def initialize

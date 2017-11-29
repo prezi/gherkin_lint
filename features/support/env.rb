@@ -10,15 +10,11 @@ end
 
 def disable_linters
   <<-content
-  AvoidCharsInOutline:
-      Enabled: false
   AvoidOutlineForSingleExample:
       Enabled: false
   AvoidPeriod:
       Enabled: false
   AvoidQuotes:
-      Enabled: false
-  AvoidStepsContaining:
       Enabled: false
   AvoidScripting:
       Enabled: false
@@ -30,11 +26,7 @@ def disable_linters
       Enabled: false
   BeDeclarative:
       Enabled: false
-  FeatureSwitchInsideFeature:
-      Enabled: false
   FileNameDiffersFeatureName:
-      Enabled: false
-  FSOnSeparateLines:
       Enabled: false
   MissingExampleName:
       Enabled: false
@@ -44,10 +36,6 @@ def disable_linters
       Enabled: false
   MissingScenarioName:
       Enabled: false
-  MissingPlatformTag:
-      Enabled: false
-  MissingTeamTag:
-      Enabled: false
   MissingTestAction:
       Enabled: false
   MissingVerification:
@@ -56,15 +44,31 @@ def disable_linters
       Enabled: false
   InvalidStepFlow:
       Enabled: false
+  PreziAvoidCharsInOutline:
+      Enabled: false
+  PreziAvoidQuotes:
+      Enabled: false
+  PreziAvoidStepsContaining:
+      Enabled: false
+  PreziFeatureSwitchInsideFeature:
+      Enabled: false
+  PreziFSOnSeparateLines:
+      Enabled: false
+  PreziTagsFeatureSwitchOrder:
+      Enabled: false
+  PreziUseGivenWhenThenOnce:
+      Enabled: false
+  PreziMissingPlatformTag:
+      Enabled: false
+  PreziMissingTeamTag:
+      Enabled: false
+  PreziTagsInsideFeature:
+      Enabled: false
+  PreziTagsOnSeparateLines:
+      Enabled: false
   RequiredTagsStartsWith:
       Enabled: false
   SameTagForAllScenarios:
-      Enabled: false
-  TagsFeatureSwitchOrder:
-      Enabled: false
-  TagsInsideFeature:
-      Enabled: false
-  TagsOnSeparateLines:
       Enabled: false
   TagUsedMultipleTimes:
       Enabled: false
@@ -85,8 +89,6 @@ def disable_linters
   UnusedVariable:
       Enabled: false
   UseBackground:
-      Enabled: false
-  UseGivenWhenThenOnce:
       Enabled: false
   UseOutline:
       Enabled: false

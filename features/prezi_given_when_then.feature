@@ -7,7 +7,7 @@ Feature: Only one Given, one When and one Then
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(UseGivenWhenThenOnce)
+      linter.enable %w(PreziUseGivenWhenThenOnce)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -27,7 +27,7 @@ Feature: Only one Given, one When and one Then
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      UseGivenWhenThenOnce - Multiple Given steps
+      PreziUseGivenWhenThenOnce - Multiple Given steps
         lint.feature (2): Test.A
 
       """
@@ -45,7 +45,7 @@ Feature: Only one Given, one When and one Then
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      UseGivenWhenThenOnce - Multiple When steps
+      PreziUseGivenWhenThenOnce - Multiple When steps
         lint.feature (2): Test.A
 
       """
@@ -63,7 +63,7 @@ Feature: Only one Given, one When and one Then
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      UseGivenWhenThenOnce - Multiple Then steps
+      PreziUseGivenWhenThenOnce - Multiple Then steps
         lint.feature (2): Test.A
 
       """

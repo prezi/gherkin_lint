@@ -3,7 +3,7 @@ require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
   # service class to lint for missing tags
-  class MissingTeamTag < Linter
+  class PreziMissingTeamTag < Linter
     include TagCollector
 
     def initialize

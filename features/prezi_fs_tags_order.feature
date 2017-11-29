@@ -8,7 +8,7 @@ Feature: Tags before feature switches
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(TagsFeatureSwitchOrder)
+      linter.enable %w(PreziTagsFeatureSwitchOrder)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -29,7 +29,7 @@ Feature: Tags before feature switches
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TagsFeatureSwitchOrder - @enable-fs-C not enabled/disabled after tags
+      PreziTagsFeatureSwitchOrder - @enable-fs-C not enabled/disabled after tags
         lint.feature (5): Test.A
 
       """

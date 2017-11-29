@@ -2,7 +2,7 @@ require 'gherkin_lint/linter'
 
 module GherkinLint
   # service class to lint for invalid strings
-  class AvoidStepsContaining < Linter
+  class PreziAvoidStepsContaining < Linter
     def initialize
       super
     end

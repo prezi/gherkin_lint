@@ -8,7 +8,7 @@ Feature: Feature switches at top of file
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(FeatureSwitchInsideFeature)
+      linter.enable %w(PreziFeatureSwitchInsideFeature)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -27,7 +27,7 @@ Feature: Feature switches at top of file
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      FeatureSwitchInsideFeature - @enable-fs-C not enabled/disabled at top of the page
+      PreziFeatureSwitchInsideFeature - @enable-fs-C not enabled/disabled at top of the page
         lint.feature (3): Test.A
 
        """
@@ -43,7 +43,7 @@ Feature: Feature switches at top of file
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      FeatureSwitchInsideFeature - Avoid enabling/disabling feature switches in steps
+      PreziFeatureSwitchInsideFeature - Avoid enabling/disabling feature switches in steps
         lint.feature (3): Test.A step: enable feature switch
 
       """
