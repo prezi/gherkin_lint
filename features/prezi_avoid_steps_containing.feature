@@ -7,7 +7,7 @@ Feature: Avoid sentences containing bad words
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidSentencesContaining)
+      linter.enable %w(AvoidStepsContaining)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -26,7 +26,7 @@ Feature: Avoid sentences containing bad words
     When I run `ruby lint.rb`
     Then it should pass with exactly:
       """
-      AvoidSentencesContaining (Warning) - Avoid steps containing with "I click", "I see", "I should", "I go to", "I fill"
+      AvoidStepsContaining (Warning) - Avoid steps containing with "I click", "I see", "I should", "I go to", "I fill"
         lint.feature (4): Test.A step: I see the button
 
       """

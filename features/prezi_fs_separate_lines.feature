@@ -1,56 +1,59 @@
-Feature: Feature switches at top of file
+Feature: Feature switches on separate lines
 
   Background: Prepare Testee
 
-  Given a file named "lint.rb" with:
+    Given a file named "lint.rb" with:
       """
       $LOAD_PATH << '../../lib'
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(FeatureSwitchInsideFeature)
+      linter.enable %w(FSOnSeparateLines)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
 
       """
 
-  Scenario: FS ensbled inside Feature
+  Scenario: Steps with feature switches enabled in one line
     Given a file named "lint.feature" with:
       """
-      Feature: Test
-      @enable-fs-C
-      Scenario: A
-        When step 1
-        Then Step 2
-      """
-    When I run `ruby lint.rb`
-    Then it should fail with exactly:
-      """
-      FeatureSwitchInsideFeature - @enable-fs-C not at top of the page
-        lint.feature (3): Test.A
-
-       """
-
-  Scenario: FS ensbled inside Feature inside step
-    Given a file named "lint.feature" with:
-      """
+      @enable-fs-A @enable-fs-@B @enable-fs-@C
       Feature: Test
         Scenario: A
-          When enable feature switch
+          When step 1
           Then Step 2
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      FeatureSwitchInsideFeature - Avoid enabling/disabling feature switches in steps
-        lint.feature (3): Test.A step: enable feature switch
+      FSOnSeparateLines - One feature switch per line
+        lint.feature
+
+      """
+
+  Scenario: Steps with feature switches disabled in one line
+    Given a file named "lint.feature" with:
+      """
+      @disable-fs-A @disable-fs-@B @disable-fs-@C
+      Feature: Test
+        Scenario: A
+          When step 1
+          Then Step 2
+      """
+    When I run `ruby lint.rb`
+    Then it should fail with exactly:
+      """
+      FSOnSeparateLines - One feature switch per line
+        lint.feature
 
       """
 
   Scenario: Valid Example
     Given a file named "lint.feature" with:
       """
+      @enable-fs-A
+      @enable-fs-B
       @enable-fs-C
       Feature: Test
         Scenario: A

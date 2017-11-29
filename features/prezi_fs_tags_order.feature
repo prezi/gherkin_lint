@@ -15,7 +15,7 @@ Feature: Tags before feature switches
 
       """
 
-  Scenario: Steps With Period
+  Scenario: Feature switch enabled before tags
     Given a file named "lint.feature" with:
       """
       @enable-fs-C

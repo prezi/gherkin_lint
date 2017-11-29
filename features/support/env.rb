@@ -10,7 +10,7 @@ end
 
 def disable_linters
   <<-content
-  AvoidCharactersInOutlineExample:
+  AvoidCharsInOutline:
       Enabled: false
   AvoidOutlineForSingleExample:
       Enabled: false
@@ -18,7 +18,7 @@ def disable_linters
       Enabled: false
   AvoidQuotes:
       Enabled: false
-  AvoidSentencesContaining:
+  AvoidStepsContaining:
       Enabled: false
   AvoidScripting:
       Enabled: false
@@ -34,6 +34,8 @@ def disable_linters
       Enabled: false
   FileNameDiffersFeatureName:
       Enabled: false
+  FSOnSeparateLines:
+      Enabled: false
   MissingExampleName:
       Enabled: false
   MissingFeatureDescription:
@@ -42,7 +44,9 @@ def disable_linters
       Enabled: false
   MissingScenarioName:
       Enabled: false
-  MissingTags:
+  MissingPlatformTag:
+      Enabled: false
+  MissingTeamTag:
       Enabled: false
   MissingTestAction:
       Enabled: false
@@ -58,7 +62,9 @@ def disable_linters
       Enabled: false
   TagsFeatureSwitchOrder:
       Enabled: false
-  TagsOnSeperateLines:
+  TagsInsideFeature:
+      Enabled: false
+  TagsOnSeparateLines:
       Enabled: false
   TagUsedMultipleTimes:
       Enabled: false

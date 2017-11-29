@@ -1,10 +1,10 @@
-AvoidCharactersInOutlineExample:
+AvoidCharsInOutline:
     Enabled: true
 AvoidOutlineForSingleExample:
     Enabled: true
 AvoidPeriod:
     Enabled: true
-AvoidSentencesContaining:
+AvoidStepsContaining:
     Enabled: true
 AvoidQuotes:
     Enabled: true
@@ -22,6 +22,8 @@ FeatureSwitchInsideFeature:
     Enabled: true
 FileNameDiffersFeatureName:
     Enabled: false
+FSOnSeparateLines:
+    Enabled: true
 MissingExampleName:
     Enabled: true
 MissingFeatureDescription:
@@ -30,7 +32,9 @@ MissingFeatureName:
     Enabled: true
 MissingScenarioName:
     Enabled: true
-MissingTags:
+MissingPlatformTag:
+      Enabled: true
+MissingTeamTag:
       Enabled: true
 MissingTestAction:
     Enabled: true
@@ -46,7 +50,9 @@ SameTagForAllScenarios:
     Enabled: true
 TagsFeatureSwitchOrder:
     Enabled: true
-TagsOnSeperateLines:
+TagsInsideFeature:
+    Enabled: true
+TagsOnSeparateLines:
     Enabled: true
 TagUsedMultipleTimes:
     Enabled: true

@@ -2,7 +2,7 @@ require 'gherkin_lint/linter'
 
 module GherkinLint
   # service class to lint for invalid characters in outline
-  class AvoidCharactersInOutlineExample < Linter
+  class AvoidCharsInOutline < Linter
     def initialize
       super
     end

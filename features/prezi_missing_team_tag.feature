@@ -1,4 +1,4 @@
-Feature: Avoid quotes
+Feature: Missing tags
 
   Background: Prepare Testee
     Given a file named "lint.rb" with:
@@ -7,40 +7,35 @@ Feature: Avoid quotes
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidQuotes)
+      linter.enable %w(MissingTeamTag)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
 
       """
 
-  Scenario: Step containing quotes
+  Scenario: Missing tags
     Given a file named "lint.feature" with:
       """
+      @A
+      @B
       Feature: Test
         Scenario: A
-          Given setup
-          When the "simple" step
-          Then verify
       """
     When I run `ruby lint.rb`
-    Then it should pass with exactly:
+    Then it should fail with exactly:
       """
-      AvoidQuotes (Warning) - Avoid using quotes in steps
-        lint.feature (4): Test.A step: the "simple" step
+      MissingTeamTag - Missing team tag
+        lint.feature
 
       """
 
   Scenario: Valid Example
     Given a file named "lint.feature" with:
       """
+      @team-a
       Feature: Test
         Scenario: A
-          Given setup
-          When test
-          Then verification
-          When test
-          Then verification
       """
     When I run `ruby lint.rb`
     Then it should pass with exactly:

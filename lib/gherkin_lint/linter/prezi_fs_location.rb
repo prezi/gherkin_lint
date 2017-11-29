@@ -12,33 +12,26 @@ module GherkinLint
 
     def lint
       background_and_scenarios do |file, feature, scenario|
-        _check_fs_tags_locations(file, feature, scenario)
+        _check_fs_locations(file, feature, scenario)
         _check_fs_inside_steps(file, feature, scenario)
       end
     end
 
-    def _check_fs_tags_locations(file, feature, scenario)
+    def _check_fs_locations(file, feature, scenario)
       feature_location = feature[:location][:line]
 
       references = [reference(file, feature, scenario)]
-      tag_locations = gather_tag_locations(feature)
-      _check_fs_tags_location(references, feature_location, tag_locations)
-
-      tag_locations = gather_tag_locations(scenario)
-      _check_fs_tags_location(references, feature_location, tag_locations)
-
-      references = [reference(file, feature, scenario)]
       fs_locations = gather_fs_locations(feature)
-      _check_fs_tags_location(references, feature_location, fs_locations)
+      _check_fs_location(references, feature_location, fs_locations)
 
       fs_locations = gather_fs_locations(scenario)
-      _check_fs_tags_location(references, feature_location, fs_locations)
+      _check_fs_location(references, feature_location, fs_locations)
     end
 
-    def _check_fs_tags_location(references, feature_location, tag_locations)
-      tag_locations.each do |tag|
-        if feature_location < tag[:location]
-          add_error(references, "@#{tag[:name]} not at top of the page")
+    def _check_fs_location(references, feature_location, fs_locations)
+      fs_locations.each do |fs|
+        if feature_location < fs[:location]
+          add_error(references, "@#{fs[:name]} not enabled/disabled at top of the page")
         end
       end
     end

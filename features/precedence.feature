@@ -18,11 +18,13 @@ Feature: Precedence
     And a file named ".gherkin_lint.yml" with:
       """
       ---
-      MissingTags:
+      MissingPlatformTag:
           Enabled: false
       """
     And a file named "lint.feature" with:
       """
+      @team-a
+
       Feature: Lint
         A User can test a feature
         Scenario: A
@@ -42,7 +44,7 @@ Feature: Precedence
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(MissingTags)
+      linter.enable %w(MissingPlatformTag)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -51,11 +53,13 @@ Feature: Precedence
     And a file named ".gherkin_lint.yml" with:
       """
       ---
-      MissingTags:
+      MissingPlatformTag:
           Enabled: false
       """
     And a file named "lint.feature" with:
       """
+      @team-a
+
       Feature: Lint
         A User can test a feature
         Scenario: A
@@ -66,9 +70,7 @@ Feature: Precedence
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      MissingTags - Missing platform tag
-        lint.feature
-      MissingTags - Missing team tag
+      MissingPlatformTag - Missing platform tag
         lint.feature
 
       """

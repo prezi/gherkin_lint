@@ -3,7 +3,7 @@ require 'gherkin_lint/linter/tag_collector'
 
 module GherkinLint
   # service class to lint for tags on separate lines
-  class TagsOnSeperateLines < Linter
+  class TagsOnSeparateLines < Linter
     include TagCollector
 
     def initialize
@@ -16,11 +16,6 @@ module GherkinLint
         description = 'One tag per line'
         tag_locations = gather_tag_locations(feature).map { |tag| tag[:location] }.compact
         _check_tag_locations(tag_locations, references, description)
-
-        references = [reference(file)]
-        description = 'One feature switch per line'
-        fs_locations = gather_fs_locations(feature).map { |tag| tag[:location] }.compact
-        _check_tag_locations(fs_locations, references, description)
       end
     end
 

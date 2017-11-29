@@ -8,14 +8,14 @@ Feature: Avoid characters in the outline
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidCharactersInOutlineExample)
+      linter.enable %w(AvoidCharsInOutline)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
 
       """
 
-  Scenario: Examples containing characters
+  Scenario: Outline containing characters
     Given a file named "lint.feature" with:
       """
       Feature: Test
@@ -30,7 +30,7 @@ Feature: Avoid characters in the outline
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      AvoidCharactersInOutlineExample - Outline example header contains character 'A_'
+      AvoidCharsInOutline - Outline example header contains character 'A_'
         lint.feature (2): Test.A
 
       """
