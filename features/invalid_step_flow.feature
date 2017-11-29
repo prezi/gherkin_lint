@@ -43,9 +43,9 @@ Feature: Invalid Step Flow
           Then verify
       """
     When I run `ruby lint.rb`
-    Then it should pass with exactly:
+    Then it should fail with exactly:
       """
-      InvalidStepFlow (Warning) - Given after Action or Verification
+      InvalidStepFlow - Given after Action or Verification
         lint.feature (4): Test.A step: setup
 
       """
@@ -61,9 +61,9 @@ Feature: Invalid Step Flow
           When test
       """
     When I run `ruby lint.rb`
-    Then it should pass with exactly:
+    Then it should fail with exactly:
       """
-      InvalidStepFlow (Warning) - Last step is an action
+      InvalidStepFlow - Last step is an action
         lint.feature (6): Test.A step: test
 
       """

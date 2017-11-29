@@ -18,7 +18,7 @@ Feature: Precedence
     And a file named ".gherkin_lint.yml" with:
       """
       ---
-      AvoidPeriod:
+      MissingTags:
           Enabled: false
       """
     And a file named "lint.feature" with:
@@ -28,7 +28,7 @@ Feature: Precedence
         Scenario: A
           Given this is a setup
           When I run the test
-          Then I see the verification.
+          Then it gets verified
       """
     When I run `ruby lint.rb`
     Then it should pass with exactly:
@@ -42,7 +42,7 @@ Feature: Precedence
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidPeriod)
+      linter.enable %w(MissingTags)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -51,7 +51,7 @@ Feature: Precedence
     And a file named ".gherkin_lint.yml" with:
       """
       ---
-      AvoidPeriod:
+      MissingTags:
           Enabled: false
       """
     And a file named "lint.feature" with:
@@ -61,12 +61,12 @@ Feature: Precedence
         Scenario: A
           Given this is a setup
           When I run the test
-          Then I see the verification.
+          Then it gets verified
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      AvoidPeriod
-        lint.feature (6): Lint.A step: I see the verification.
+      MissingTags - Missing platform tag
+        lint.feature
 
       """
