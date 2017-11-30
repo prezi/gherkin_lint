@@ -8,6 +8,7 @@ module GherkinLint
         references = [reference(file, feature, scenario)]
         counts = Hash.new 0
         counts[:background] = Hash.new 0
+        counts[:scenario] = Hash.new 0
         if scenario[:type] == :Background
           counts[:background] = _count_occurrences_in_scenario(scenario)
         else
