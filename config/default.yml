@@ -2,8 +2,6 @@ AvoidOutlineForSingleExample:
     Enabled: true
 AvoidPeriod:
     Enabled: true
-AvoidQuotes:
-    Enabled: true
 AvoidScripting:
     Enabled: false
 BackgroundDoesMoreThanSetup:

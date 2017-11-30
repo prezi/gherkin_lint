@@ -14,8 +14,6 @@ def disable_linters
       Enabled: false
   AvoidPeriod:
       Enabled: false
-  AvoidQuotes:
-      Enabled: false
   AvoidScripting:
       Enabled: false
   BackgroundDoesMoreThanSetup:
