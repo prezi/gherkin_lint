@@ -10,6 +10,7 @@ module GherkinLint
       @name = name
       @references = references
       @description = description
+      @link = 'https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-'
     end
   end
 
@@ -19,6 +20,7 @@ module GherkinLint
       result = red(@name)
       result += " - #{@description}" unless @description.nil?
       result += "\n  " + green(@references.uniq * "\n  ")
+      result += "\n  " + @link + @name
       result
     end
   end
@@ -29,6 +31,7 @@ module GherkinLint
       result = "#{yellow(@name)} (Warning)"
       result += " - #{@description}" unless @description.nil?
       result += "\n  " + green(@references.uniq * "\n  ")
+      result += "\n  " + @link + @name
       result
     end
   end
