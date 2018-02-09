@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Gherkin Lint'
   s.description = 'Lint Gherkin Files'
   s.authors     = ['Stefan Rohe', 'Nishtha Argawal', 'John Gluck']
-  s.homepage    = 'http://github.com/funkwerk/gherkin_lint/'
+  s.homepage    = 'https://github.com/prezi/gherkin_lint'
   s.files       = `git ls-files`.split("\n")
   s.executables = s.files.grep(%r{^bin/}) { |file| File.basename(file) }
   s.add_runtime_dependency 'gherkin', ['>= 4.0.0']
