@@ -30,6 +30,7 @@ Feature: Unique Scenario Names
       UniqueScenarioNames - 'Unique Scenario Names.A' used 2 times
         lint.feature (2): Unique Scenario Names.A
         lint.feature (3): Unique Scenario Names.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-UniqueScenarioNames
 
       """
 

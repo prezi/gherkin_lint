@@ -22,7 +22,7 @@ module GherkinLint
     end
 
     def _get_tag_dict(tag)
-      { :name => tag[:name][1..-1], :location => tag[:location][:line] }
+      { name: tag[:name][1..-1], location: tag[:location][:line] }
     end
   end
 end

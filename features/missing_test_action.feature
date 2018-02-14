@@ -30,6 +30,7 @@ Feature: Missing Test Action
       """
       MissingTestAction (Warning) - No 'When'-Step
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-MissingTestAction
 
       """
 

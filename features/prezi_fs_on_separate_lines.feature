@@ -29,6 +29,7 @@ Feature: Feature switches on separate lines
       """
       PreziFSOnSeparateLines - One feature switch per line
         lint.feature
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziFSOnSeparateLines
 
       """
 
@@ -46,6 +47,7 @@ Feature: Feature switches on separate lines
       """
       PreziFSOnSeparateLines - One feature switch per line
         lint.feature
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziFSOnSeparateLines
 
       """
 

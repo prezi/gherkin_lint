@@ -34,8 +34,10 @@ Feature: Disable Tags
       """
       InvalidStepFlow - Given after Action or Verification
         lint.feature (8): Test.Test step: setup
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-InvalidStepFlow
       InvalidStepFlow (Warning) - Missing Action
         lint.feature (6): Test.Test step: check
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-InvalidStepFlow
 
       """
 

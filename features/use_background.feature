@@ -36,6 +36,7 @@ Feature: Use Background
       """
       UseBackground - Step 'Given setup' should be part of background
         lint.feature (1): Test
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-UseBackground
 
       """
 
@@ -67,6 +68,7 @@ Feature: Use Background
       """
       UseBackground - Step 'Given A' should be part of background
         lint.feature (1): Test
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-UseBackground
 
       """
 

@@ -13,19 +13,19 @@ Metrics/AbcSize:
 # Offense count: 1
 # Configuration parameters: CountComments.
 Metrics/ClassLength:
-  Max: 123
+  Max: 130
 
 # Offense count: 33
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes.
 # URISchemes: http, https
 Metrics/LineLength:
-  Max: 116
+  Max: 150
   Exclude:
     - "**/*_spec.rb"
 # Offense count: 1
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
-  Max: 11
+  Max: 12
 
 # Offense count: 1
 # Cop supports --auto-correct.

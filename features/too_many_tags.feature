@@ -30,6 +30,7 @@ Feature: Too Many Tags
       """
       TooManyTags (Warning) - Used 6 Tags
         lint.feature (4): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-TooManyTags
 
       """
 

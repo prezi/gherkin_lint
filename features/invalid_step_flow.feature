@@ -30,6 +30,7 @@ Feature: Invalid Step Flow
       """
       InvalidStepFlow (Warning) - Missing Action
         lint.feature (4): Test.A step: verify
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-InvalidStepFlow
 
       """
 
@@ -47,6 +48,7 @@ Feature: Invalid Step Flow
       """
       InvalidStepFlow - Given after Action or Verification
         lint.feature (4): Test.A step: setup
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-InvalidStepFlow
 
       """
 
@@ -65,6 +67,7 @@ Feature: Invalid Step Flow
       """
       InvalidStepFlow - Last step is an action
         lint.feature (6): Test.A step: test
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-InvalidStepFlow
 
       """
 

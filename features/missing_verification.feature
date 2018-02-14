@@ -31,6 +31,7 @@ Feature: Missing Verification
       """
       MissingVerification - No verification step
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-MissingVerification
 
       """
 

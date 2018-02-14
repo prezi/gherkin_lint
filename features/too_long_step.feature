@@ -30,6 +30,7 @@ Feature: Too Long Step
       """
       TooLongStep - Used 118 characters
         lint.feature (3): Test.A step: action is quite long so that is not very readable and people even need to scroll because it does not fit on the screen
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-TooLongStep
 
       """
 

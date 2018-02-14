@@ -29,6 +29,7 @@ Feature: Feature switches at top of file
       """
       PreziTagsInsideFeature - @a not at top of the page
         lint.feature (3): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziTagsInsideFeature
 
        """
 

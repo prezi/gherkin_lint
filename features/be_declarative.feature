@@ -32,8 +32,10 @@ Feature: Be Declarative
       """
       BeDeclarative (Warning) - No verb
         lint.feature (3): Test.A step: a number 1
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-BeDeclarative
       BeDeclarative (Warning) - No verb
         lint.feature (4): Test.A step: another number 2
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-BeDeclarative
 
       """
 

@@ -31,6 +31,7 @@ Feature: Avoid Period
       """
       AvoidPeriod
         lint.feature (5): Test.A step: verification.
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-AvoidPeriod
 
       """
 

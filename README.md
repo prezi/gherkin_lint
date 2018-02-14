@@ -4,6 +4,18 @@ This tool lints gherkin files. It is customized to lint rules set in the [Prezi 
 
 Find a detailed description, default value and example of all rules available in the [Prezi Gherkin Linter document](https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter+for+Cucumber).
 
+## Test gem locally
+
+run `rake test`
+
+## Build gem
+
+run `rake build` which creates gherkin_lint-1.1.0.gem file
+
+## Install gem
+
+run `gem install gherkin_lint-1.1.0.gem`
+
 ## Usage
 
 run `gherkin_lint` on a list of files
@@ -58,6 +70,7 @@ With `--disable CHECK` or `--enable CHECK` it's possible to disable respectivly 
 - [PreziTagsInsideFeature: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_tags_inside_feature.feature)
 - [PreziTagsOnSeparateLines: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_tags_on_separate_lines.feature)
 - [PreziUseGivenWhenThenOnce: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_use_given_when_then_once.feature)
+
 ## Errors and Warnings
 
 There are errors and warnings.

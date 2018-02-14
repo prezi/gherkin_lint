@@ -27,6 +27,7 @@ Feature: File Name Differs Feature Name
       """
       FileNameDiffersFeatureName (Warning) - Feature name should be 'Lint'
         lint.feature (1): Test
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-FileNameDiffersFeatureName
 
       """
 

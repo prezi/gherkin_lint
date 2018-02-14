@@ -39,8 +39,10 @@ Feature: Missing Example Name
       """
       MissingExampleName - No Example Name
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-MissingExampleName
       MissingExampleName - No Example Name
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-MissingExampleName
 
       """
 
