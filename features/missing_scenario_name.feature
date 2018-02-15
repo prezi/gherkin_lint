@@ -28,7 +28,7 @@ Feature: Missing Scenario Name
       """
       MissingScenarioName - No Scenario Name
         lint.feature (2): Test
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-MissingScenarioName
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-MissingScenarioName
 
       """
 
@@ -43,7 +43,7 @@ Feature: Missing Scenario Name
       """
       MissingScenarioName - No Scenario Name
         lint.feature (2): Test
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-MissingScenarioName
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-MissingScenarioName
 
       """
 

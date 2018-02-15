@@ -10,7 +10,7 @@ module GherkinLint
       @name = name
       @references = references
       @description = description
-      @link = 'https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-'
+      @link = 'https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-'
     end
   end
 

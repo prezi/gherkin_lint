@@ -29,7 +29,7 @@ Feature: Feature switches at top of file
       """
       PreziFeatureSwitchInsideFeature - @enable-fs-C not enabled/disabled at top of the page
         lint.feature (3): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziFeatureSwitchInsideFeature
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziFeatureSwitchInsideFeature
 
        """
 
@@ -46,7 +46,7 @@ Feature: Feature switches at top of file
       """
       PreziFeatureSwitchInsideFeature - Avoid enabling/disabling feature switches in steps
         lint.feature (3): Test.A step: enable feature switch
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziFeatureSwitchInsideFeature
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziFeatureSwitchInsideFeature
 
       """
 

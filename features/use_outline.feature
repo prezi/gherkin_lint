@@ -38,7 +38,7 @@ Feature: Use Outline
       UseOutline - Scenarios are similar by 97.8 %
         lint.feature (5): Test.A
         lint.feature (9): Test.B
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-UseOutline
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-UseOutline
 
       """
 

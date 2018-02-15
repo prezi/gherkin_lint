@@ -32,7 +32,7 @@ Feature: Avoid characters in the outline
       """
       PreziAvoidCharsInOutline - Outline example header contains character 'A_'
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziAvoidCharsInOutline
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziAvoidCharsInOutline
 
       """
 

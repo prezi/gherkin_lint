@@ -29,7 +29,7 @@ Feature: Tags on separate lines
       """
       PreziTagsOnSeparateLines - One tag per line
         lint.feature
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziTagsOnSeparateLines
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziTagsOnSeparateLines
 
       """
 

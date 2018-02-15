@@ -29,7 +29,7 @@ Feature: Only one Given, one When and one Then
       """
       PreziUseGivenWhenThenOnce - Multiple Given steps
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziUseGivenWhenThenOnce
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziUseGivenWhenThenOnce
 
       """
 
@@ -48,7 +48,7 @@ Feature: Only one Given, one When and one Then
       """
       PreziUseGivenWhenThenOnce - Multiple When steps
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziUseGivenWhenThenOnce
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziUseGivenWhenThenOnce
 
       """
 
@@ -67,7 +67,7 @@ Feature: Only one Given, one When and one Then
       """
       PreziUseGivenWhenThenOnce - Multiple Then steps
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziUseGivenWhenThenOnce
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziUseGivenWhenThenOnce
 
       """
 

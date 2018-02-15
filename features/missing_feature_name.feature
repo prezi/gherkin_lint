@@ -27,7 +27,7 @@ Feature: Missing Feature Name
       """
       MissingFeatureName - No Feature Name
         lint.feature
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-MissingFeatureName
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-MissingFeatureName
 
       """
 

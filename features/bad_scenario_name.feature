@@ -28,7 +28,7 @@ Feature: Bad Scenario Name
       """
       BadScenarioName (Warning) - Avoid scenario names containing with "test", "verify", "check"
         lint.feature (2): Test.<bad word> something
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-BadScenarioName
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-BadScenarioName
 
       """
 

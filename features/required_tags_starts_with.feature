@@ -35,7 +35,7 @@ Feature: Required Tags Starts With
       """
       RequiredTagsStartsWith - Required Tag not found
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-RequiredTagsStartsWith
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-RequiredTagsStartsWith
 
       """
 

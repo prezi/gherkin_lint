@@ -28,7 +28,7 @@ Feature: Avoid sentences containing bad words
       """
       PreziAvoidStepsContaining (Warning) - Avoid steps containing with "I click", "I see", "I should", "I go to", "I fill"
         lint.feature (4): Test.A step: I see the button
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziAvoidStepsContaining
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziAvoidStepsContaining
 
       """
 

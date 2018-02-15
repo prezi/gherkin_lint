@@ -28,7 +28,7 @@ Feature: Avoid quotes
       """
       PreziAvoidQuotes (Warning) - Avoid using quotes in steps
         lint.feature (4): Test.A step: the "simple" step
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#id-[IN-PROGRESS]GherkinLinter-PreziAvoidQuotes
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziAvoidQuotes
 
       """
 
