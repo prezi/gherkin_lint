@@ -27,7 +27,7 @@ Feature: Missing tags
       """
       PreziMissingTeamTag - Missing team tag
         lint.feature
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziMissingTeamTag
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-PreziMissingTeamTag
 
       """
 

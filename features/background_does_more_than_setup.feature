@@ -30,7 +30,7 @@ Feature: Background Does More Than Setup
       """
       BackgroundDoesMoreThanSetup - Just Given Steps allowed
         lint.feature (4): Test.Preparation step: test
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-BackgroundDoesMoreThanSetup
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-BackgroundDoesMoreThanSetup
 
       """
 

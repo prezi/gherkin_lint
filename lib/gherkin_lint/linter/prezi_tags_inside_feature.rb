@@ -29,9 +29,7 @@ module GherkinLint
 
     def _check_tags_location(references, feature_location, tag_locations)
       tag_locations.each do |tag|
-        if feature_location < tag[:location]
-          add_error(references, "@#{tag[:name]} not at top of the page")
-        end
+        add_error(references, "@#{tag[:name]} not at top of the page") if feature_location < tag[:location]
       end
     end
   end

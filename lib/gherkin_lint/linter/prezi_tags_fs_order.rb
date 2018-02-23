@@ -32,9 +32,7 @@ module GherkinLint
 
     def _check_fs_tag_order(references, last_tag_location, feature_switches)
       feature_switches.each do |fs|
-        if last_tag_location > fs[:location]
-          add_error(references, "@#{fs[:name]} not enabled/disabled after tags")
-        end
+        add_error(references, "@#{fs[:name]} not enabled/disabled after tags") if last_tag_location > fs[:location]
       end
     end
   end

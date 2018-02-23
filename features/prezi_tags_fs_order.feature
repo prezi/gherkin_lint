@@ -31,7 +31,7 @@ Feature: Tags before feature switches
       """
       PreziTagsFeatureSwitchOrder - @enable-fs-C not enabled/disabled after tags
         lint.feature (5): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziTagsFeatureSwitchOrder
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-PreziTagsFeatureSwitchOrder
 
       """
 

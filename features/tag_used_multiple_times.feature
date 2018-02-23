@@ -30,7 +30,7 @@ Feature: Tag Used Multiple Times
       """
       TagUsedMultipleTimes - Tag @tag used multiple times
         lint.feature (4): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-TagUsedMultipleTimes
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-TagUsedMultipleTimes
 
       """
      

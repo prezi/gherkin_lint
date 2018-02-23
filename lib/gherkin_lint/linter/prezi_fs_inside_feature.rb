@@ -30,9 +30,7 @@ module GherkinLint
 
     def _check_fs_location(references, feature_location, fs_locations)
       fs_locations.each do |fs|
-        if feature_location < fs[:location]
-          add_error(references, "@#{fs[:name]} not enabled/disabled at top of the page")
-        end
+        add_error(references, "@#{fs[:name]} not enabled/disabled at top of the page") if feature_location < fs[:location]
       end
     end
 
@@ -40,10 +38,7 @@ module GherkinLint
       scenario[:steps].each do |step|
         references = [reference(file, feature, scenario, step)]
         description = 'Avoid enabling/disabling feature switches in steps'
-        fs_words = %w[enable disable]
-        fs_words.each do |fs_word|
-          add_error(references, description) if step[:text].include? fs_word
-        end
+        add_error(references, description) if step[:text].include? 'feature switch'
       end
     end
   end

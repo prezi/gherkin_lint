@@ -42,13 +42,14 @@ Feature: Too Many Steps
           But result shouldn't be 23
           And also not 42
           And probably also not 1337
+          And verification should be possible
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      TooManySteps - Used 20 Steps
+      TooManySteps - Used 21 Steps (max 20)
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-TooManySteps
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-TooManySteps
 
       """
 

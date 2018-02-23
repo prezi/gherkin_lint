@@ -2,7 +2,7 @@
 
 This tool lints gherkin files. It is customized to lint rules set in the [Prezi Cucumber Standards](https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/133623836/Cucumber+Standards).
 
-Find a detailed description, default value and example of all rules available in the [Prezi Gherkin Linter document](https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter+for+Cucumber).
+Find a detailed description, default value and example of all rules available in the [Prezi Gherkin Linter document](https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter+for+Cucumber).
 
 ## Test gem locally
 

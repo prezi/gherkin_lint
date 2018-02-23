@@ -27,7 +27,7 @@ Feature: Missing tags
       """
       PreziMissingPlatformTag - Missing platform tag
         lint.feature
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziMissingPlatformTag
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-PreziMissingPlatformTag
 
       """
 

@@ -31,7 +31,7 @@ Feature: Same Tag For All Scenarios
       """
       SameTagForAllScenarios - Tag '@A' should be used at Feature level
         lint.feature (1): Test
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-SameTagForAllScenarios
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-SameTagForAllScenarios
 
       """
 
@@ -57,7 +57,7 @@ Feature: Same Tag For All Scenarios
       """
       SameTagForAllScenarios - Tag '@A' should be used at Scenario Outline level
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-SameTagForAllScenarios
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-SameTagForAllScenarios
 
       """
 

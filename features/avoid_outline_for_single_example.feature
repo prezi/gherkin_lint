@@ -36,7 +36,7 @@ Feature: Avoid Outline for single Example
       """
       AvoidOutlineForSingleExample - Better write a scenario
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-AvoidOutlineForSingleExample
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-AvoidOutlineForSingleExample
 
       """
 

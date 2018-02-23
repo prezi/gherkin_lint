@@ -29,9 +29,7 @@ module GherkinLint
     def _check_example_header(references, example)
       headers = example[:tableHeader][:cells].map { |cell| cell[:value] }
       headers.each do |value|
-        if _value_contains_non_alpha(value)
-          add_error(references, "Outline example header contains character '#{value}'")
-        end
+        add_warning(references, "Outline example header contains character '#{value}'") if _value_contains_non_alpha(value)
       end
     end
 
@@ -39,9 +37,7 @@ module GherkinLint
       example[:tableBody].each do |row|
         body = row[:cells].map { |cell| cell[:value] }
         body.each do |value|
-          if _value_contains_non_alpha(value)
-            add_error(references, "Outline example cell contains character '#{value}'")
-          end
+          add_warning(references, "Outline example cell contains character '#{value}'") if _value_contains_non_alpha(value)
         end
       end
     end

@@ -38,10 +38,10 @@ Feature: Too Many Different Tags
       """
       TooManyDifferentTags (Warning) - Used 8 Tags within single Feature
         lint.feature (1): Test
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-TooManyDifferentTags
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-TooManyDifferentTags
       TooManyDifferentTags (Warning) - Used 8 Tags across all Features
         lint.feature (1): Test
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-TooManyDifferentTags
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-TooManyDifferentTags
 
       """
 

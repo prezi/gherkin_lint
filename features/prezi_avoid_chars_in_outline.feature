@@ -28,11 +28,11 @@ Feature: Avoid characters in the outline
           | a  | b1 |
       """
     When I run `ruby lint.rb`
-    Then it should fail with exactly:
+    Then it should pass with exactly:
       """
-      PreziAvoidCharsInOutline - Outline example header contains character 'A_'
+      PreziAvoidCharsInOutline (Warning) - Outline example header contains character 'A_'
         lint.feature (2): Test.A
-        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/IN-PROGRESS+Gherkin+Linter#GherkinLinter-PreziAvoidCharsInOutline
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-PreziAvoidCharsInOutline
 
       """
 
