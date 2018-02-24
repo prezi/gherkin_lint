@@ -1,9 +1,11 @@
 require 'gherkin_lint/issue'
+require 'gherkin_lint/linter/tag_collector'
 
 # gherkin utilities
 module GherkinLint
   # base class for all linters
   class Linter
+    include TagCollector
     attr_reader :issues
 
     def self.descendants
@@ -19,6 +21,7 @@ module GherkinLint
       @files.each do |file, content|
         feature = content[:feature]
         next if feature.nil?
+        next unless gather_excluded_tags(feature).empty?
         yield(file, feature)
       end
     end
@@ -30,12 +33,16 @@ module GherkinLint
     def scenarios
       elements do |file, feature, scenario|
         next if scenario[:type] == :Background
+        next unless gather_excluded_tags(feature).empty?
+        next unless gather_excluded_tags(scenario).empty?
         yield(file, feature, scenario)
       end
     end
 
     def background_and_scenarios
       elements do |file, feature, scenario|
+        next unless gather_excluded_tags(feature).empty?
+        next unless gather_excluded_tags(scenario).empty?
         yield(file, feature, scenario)
       end
     end
@@ -44,6 +51,8 @@ module GherkinLint
       scenarios do |file, feature, scenario|
         next unless scenario.include? :steps
         next if scenario[:steps].empty?
+        next unless gather_excluded_tags(feature).empty?
+        next unless gather_excluded_tags(scenario).empty?
         yield(file, feature, scenario)
       end
     end
@@ -51,6 +60,8 @@ module GherkinLint
     def steps
       elements do |file, feature, scenario|
         next unless scenario.include? :steps
+        next unless gather_excluded_tags(feature).empty?
+        next unless gather_excluded_tags(scenario).empty?
         scenario[:steps].each { |step| yield(file, feature, scenario, step) }
       end
     end
@@ -58,6 +69,8 @@ module GherkinLint
     def backgrounds
       elements do |file, feature, scenario|
         next unless scenario[:type] == :Background
+        next unless gather_excluded_tags(feature).empty?
+        next unless gather_excluded_tags(scenario).empty?
         yield(file, feature, scenario)
       end
     end
@@ -68,6 +81,8 @@ module GherkinLint
         next if feature.nil?
         next unless feature.key? :children
         feature[:children].each do |scenario|
+          next unless gather_excluded_tags(feature).empty?
+          next unless gather_excluded_tags(scenario).empty?
           yield(file, feature, scenario)
         end
       end
