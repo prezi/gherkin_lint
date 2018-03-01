@@ -33,6 +33,7 @@ Feature: Background Requires Scenario
       """
       BackgroundRequiresMultipleScenarios - There are just 1 scenarios
         lint.feature (2): Test.Preparation
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-BackgroundRequiresMultipleScenarios
 
       """
 

@@ -9,7 +9,7 @@ After do
 end
 
 def disable_linters
-  <<-content
+  <<-CONTENT
   AvoidOutlineForSingleExample:
       Enabled: false
   AvoidPeriod:
@@ -42,6 +42,28 @@ def disable_linters
       Enabled: false
   InvalidStepFlow:
       Enabled: false
+  PreziAvoidCharsInOutline:
+      Enabled: false
+  PreziAvoidQuotes:
+      Enabled: false
+  PreziAvoidStepsContaining:
+      Enabled: false
+  PreziFeatureSwitchInsideFeature:
+      Enabled: false
+  PreziFSOnSeparateLines:
+      Enabled: false
+  PreziMissingPlatformTag:
+      Enabled: false
+  PreziMissingTeamTag:
+      Enabled: false
+  PreziTagsFeatureSwitchOrder:
+      Enabled: false
+  PreziTagsInsideFeature:
+      Enabled: false
+  PreziTagsOnSeparateLines:
+      Enabled: false
+  PreziUseGivenWhenThenOnce:
+      Enabled: false
   RequiredTagsStartsWith:
       Enabled: false
   SameTagForAllScenarios:
@@ -68,7 +90,7 @@ def disable_linters
       Enabled: false
   UseOutline:
       Enabled: false
-  content
+  CONTENT
 end
 
 Before do

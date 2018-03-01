@@ -18,17 +18,19 @@ Feature: Precedence
     And a file named ".gherkin_lint.yml" with:
       """
       ---
-      AvoidPeriod:
+      PreziMissingPlatformTag:
           Enabled: false
       """
     And a file named "lint.feature" with:
       """
+      @team-a
+
       Feature: Lint
         A User can test a feature
         Scenario: A
           Given this is a setup
           When I run the test
-          Then I see the verification.
+          Then it gets verified
       """
     When I run `ruby lint.rb`
     Then it should pass with exactly:
@@ -42,7 +44,7 @@ Feature: Precedence
       require 'gherkin_lint'
 
       linter = GherkinLint::GherkinLint.new
-      linter.enable %w(AvoidPeriod)
+      linter.enable %w(PreziMissingPlatformTag)
       linter.set_linter
       linter.analyze 'lint.feature'
       exit linter.report
@@ -51,22 +53,25 @@ Feature: Precedence
     And a file named ".gherkin_lint.yml" with:
       """
       ---
-      AvoidPeriod:
+      PreziMissingPlatformTag:
           Enabled: false
       """
     And a file named "lint.feature" with:
       """
+      @team-a
+
       Feature: Lint
         A User can test a feature
         Scenario: A
           Given this is a setup
           When I run the test
-          Then I see the verification.
+          Then it gets verified
       """
     When I run `ruby lint.rb`
     Then it should fail with exactly:
       """
-      AvoidPeriod
-        lint.feature (6): Lint.A step: I see the verification.
+      PreziMissingPlatformTag - Missing platform tag
+        lint.feature
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-PreziMissingPlatformTag
 
       """

@@ -27,6 +27,7 @@ Feature: Missing Feature Description
       """
       MissingFeatureDescription - Favor a user story as description
         lint.feature (1): Test
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-MissingFeatureDescription
 
       """
 

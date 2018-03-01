@@ -23,10 +23,11 @@ Feature: File Name Differs Feature Name
       Feature: Test
       """
     When I run `ruby lint.rb "lint.feature"`
-    Then it should fail with exactly:
+    Then it should pass with exactly:
       """
-      FileNameDiffersFeatureName - Feature name should be 'Lint'
+      FileNameDiffersFeatureName (Warning) - Feature name should be 'Lint'
         lint.feature (1): Test
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-FileNameDiffersFeatureName
 
       """
 

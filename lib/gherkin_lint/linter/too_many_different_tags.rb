@@ -22,15 +22,15 @@ module GherkinLint
     def warn_single_feature(references, tags)
       tags.uniq!
       references.uniq!
-      return false unless tags.length >= 3
-      add_error(references, "Used #{tags.length} Tags within single Feature")
+      return false unless tags.length >= 8
+      add_warning(references, "Used #{tags.length} Tags within single Feature")
     end
 
     def warn_across_all_features(references, tags)
       tags.uniq!
       references.uniq!
-      return false unless tags.length >= 10
-      add_error(references, "Used #{tags.length} Tags across all Features")
+      return false unless tags.length >= 8
+      add_warning(references, "Used #{tags.length} Tags across all Features")
     end
 
     def tags_for_feature(feature)

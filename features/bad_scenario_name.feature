@@ -24,10 +24,11 @@ Feature: Bad Scenario Name
         Scenario: <bad word> something
       """
     When I run `ruby lint.rb`
-    Then it should fail with exactly:
+    Then it should pass with exactly:
       """
-      BadScenarioName - Prefer to rely just on Given and When steps when name your scenario to keep it stable
+      BadScenarioName (Warning) - Avoid scenario names containing with "test", "verify", "check"
         lint.feature (2): Test.<bad word> something
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-BadScenarioName
 
       """
 

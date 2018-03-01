@@ -34,6 +34,7 @@ Feature: Unused Variable
       """
       UnusedVariable - '<foo>' is unused
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-UnusedVariable
 
       """
 
@@ -55,6 +56,7 @@ Feature: Unused Variable
       """
       UnusedVariable - '<foo>' is unused
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-UnusedVariable
 
       """
 
@@ -77,6 +79,7 @@ Feature: Unused Variable
       """
       UnusedVariable - '<foo>' is unused
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-UnusedVariable
 
       """
 

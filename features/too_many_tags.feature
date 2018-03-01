@@ -20,16 +20,17 @@ Feature: Too Many Tags
   Scenario: Many Tags
     Given a file named "lint.feature" with:
       """
-      @A
+      @A @B
       Feature: Test
-        @B @C
+        @C @D @E @F
         Scenario: A
       """
     When I run `ruby lint.rb`
-    Then it should fail with exactly:
+    Then it should pass with exactly:
       """
-      TooManyTags - Used 3 Tags
+      TooManyTags (Warning) - Used 6 Tags
         lint.feature (4): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-TooManyTags
 
       """
 

@@ -29,6 +29,7 @@ Feature: Invalid File Name
       """
       InvalidFileName - Feature files should be snake_cased
         <name>.feature
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-InvalidFileName
 
       """
 

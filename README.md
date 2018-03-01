@@ -1,12 +1,20 @@
 # Lint Gherkin Files
 
-[![Build Status](https://travis-ci.org/funkwerk/gherkin_lint.svg)](https://travis-ci.org/funkwerk/gherkin_lint)
-[![Code Climate](https://codeclimate.com/github/funkwerk/gherkin_lint/badges/gpa.svg)](https://codeclimate.com/github/funkwerk/gherkin_lint)
-[![Docker Build](https://img.shields.io/docker/automated/gherkin/lint.svg)](https://hub.docker.com/r/gherkin/lint/)
-[![Downloads](https://img.shields.io/gem/dt/gherkin_lint.svg)](https://rubygems.org/gems/gherkin_lint)
-[![Latest Tag](https://img.shields.io/github/tag/funkwerk/gherkin_lint.svg)](https://rubygems.org/gems/gherkin_lint)
+This tool lints gherkin files. It is customized to lint rules set in the [Prezi Cucumber Standards](https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/133623836/Cucumber+Standards).
 
-This tool lints gherkin files.
+Find a detailed description, default value and example of all rules available in the [Prezi Gherkin Linter document](https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter+for+Cucumber).
+
+## Test gem locally
+
+run `rake test`
+
+## Build gem
+
+run `rake build` which creates gherkin_lint-1.1.0.gem file
+
+## Install gem
+
+run `gem install gherkin_lint-1.1.0.gem`
 
 ## Usage
 
@@ -16,47 +24,52 @@ run `gherkin_lint` on a list of files
 
 With `--disable CHECK` or `--enable CHECK` it's possible to disable respectivly enable program wide checks except when a linter requires additional values to be set in order to be valid.  Currently only RequiredTagStartsWith meets this criteria. 
 
-Checks could be disabled using tags within Feature Files. To do so, add @disableCHECK.
-Detailed usage within the [disable_tags](https://github.com/funkwerk/gherkin_lint/blob/master/features/disable_tags.feature) feature.
-
-### Usage with Docker
-
-Assuming there are feature files in the current directory. Then call.
-
-`docker run -ti -v $(pwd):/src -w /src gherkin/lint *.feature`
-
-This will mount the current directory within the Gherkin Lint Docker Container and then check all feature files.
-
 ## Checks
 
- - [avoid outline for single example](https://github.com/funkwerk/gherkin_lint/blob/master/features/avoid_outline_for_single_example.feature)
- - [avoid period](https://github.com/funkwerk/gherkin_lint/blob/master/features/avoid_period.feature)
- - [avoid scripting](https://github.com/funkwerk/gherkin_lint/blob/master/features/avoid_scripting.feature)
- - [be declarative](https://github.com/funkwerk/gherkin_lint/blob/master/features/be_declarative.feature)
- - [background does more than setup](https://github.com/funkwerk/gherkin_lint/blob/master/features/background_does_more_than_setup.feature)
- - [background requires scenario](https://github.com/funkwerk/gherkin_lint/blob/master/features/background_requires_scenario.feature)
- - [bad scenario name](https://github.com/funkwerk/gherkin_lint/blob/master/features/bad_scenario_name.feature)
- - [file name differs feature name](https://github.com/funkwerk/gherkin_lint/blob/master/features/file_name_differs_feature_name.feature)
- - [invalid file name](https://github.com/funkwerk/gherkin_lint/blob/master/features/invalid_file_name.feature)
- - [invalid step flow](https://github.com/funkwerk/gherkin_lint/blob/master/features/invalid_step_flow.feature)
- - [missing example name](https://github.com/funkwerk/gherkin_lint/blob/master/features/missing_example_name.feature)
- - [missing feature description](https://github.com/funkwerk/gherkin_lint/blob/master/features/missing_feature_description.feature)
- - [missing feature name](https://github.com/funkwerk/gherkin_lint/blob/master/features/missing_feature_name.feature)
- - [missing scenario name](https://github.com/funkwerk/gherkin_lint/blob/master/features/missing_scenario_name.feature)
- - [missing test action](https://github.com/funkwerk/gherkin_lint/blob/master/features/missing_test_action.feature)
- - [missing verification](https://github.com/funkwerk/gherkin_lint/blob/master/features/missing_verification.feature)
- - [required tag starts with](https://github.com/funkwerk/gherkin_lint/blob/master/features/required_tag_starts_with.feature) - disabled by default
- - [same tag for all scenarios](https://github.com/funkwerk/gherkin_lint/blob/master/features/same_tag_for_all_scenarios.feature)
- - [tag used multiple times](https://github.com/funkwerk/gherkin_lint/blob/master/features/tag_used_multiple_times.feature)
- - [too clumsy](https://github.com/funkwerk/gherkin_lint/blob/master/features/too_clumsy.feature)
- - [too long step](https://github.com/funkwerk/gherkin_lint/blob/master/features/too_long_step.feature)
- - [too many different tags](https://github.com/funkwerk/gherkin_lint/blob/master/features/too_many_different_tags.feature)
- - [too many steps](https://github.com/funkwerk/gherkin_lint/blob/master/features/too_many_steps.feature)
- - [too many tags](https://github.com/funkwerk/gherkin_lint/blob/master/features/too_many_tags.feature)
- - [unique scenario names](https://github.com/funkwerk/gherkin_lint/blob/master/features/unique_scenario_names.feature)
- - [unknown variable](https://github.com/funkwerk/gherkin_lint/blob/master/features/unknown_variable.feature)
- - [use background](https://github.com/funkwerk/gherkin_lint/blob/master/features/use_background.feature)
- - [use outline](https://github.com/funkwerk/gherkin_lint/blob/master/features/use_outline.feature)
+- [AvoidOutlineForSingleExample: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/avoid_outline_for_single_example.feature)
+- [AvoidPeriod: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/avoid_period.feature)
+- [AvoidScripting: Disabled](https://github.com/prezi/gherkin_lint/blob/master/features/avoid_scripting.feature)
+- [BackgroundDoesMoreThanSetup: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/background_does_more_than_setup.feature)
+- [BackgroundRequiresMultipleScenarios: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/background_requires_scenario.feature)
+- [BadScenarioName: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/bad_scenario_name.feature)
+- [BeDeclarative: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/be_declarative.feature)
+- [FileNameDiffersFeatureName: Disabled](https://github.com/prezi/gherkin_lint/blob/master/features/file_name_differs_feature_name.feature)
+- [MissingExampleName: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/invalid_file_name.feature)
+- [MissingFeatureDescription: Disabled](https://github.com/prezi/gherkin_lint/blob/master/features/invalid_step_flow.feature)
+- [MissingFeatureName: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/missing_example_name.feature)
+- [MissingScenarioName: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/missing_feature_description.feature)
+- [MissingTestAction: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/missing_feature_name.feature)
+- [MissingVerification: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/missing_scenario_name.feature)
+- [InvalidFileName: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/missing_test_action.feature)
+- [InvalidStepFlow: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/missing_verification.feature)
+- [RequiredTagsStartsWith: Disabled](https://github.com/prezi/gherkin_lint/blob/master/features/required_tags_starts_with.feature)
+- [SameTagForAllScenarios: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/same_tag_for_all_scenarios.feature)
+- [TagUsedMultipleTimes: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/tag_used_multiple_times.feature)
+- [TooClumsy: Disabled](https://github.com/prezi/gherkin_lint/blob/master/features/too_clumsy.feature)
+- [TooManyDifferentTags: Disabled](https://github.com/prezi/gherkin_lint/blob/master/features/too_long_step.feature)
+- [TooManySteps: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/too_many_different_tags.feature)
+- [TooManyTags: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/too_many_steps.feature)
+- [TooLongStep: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/too_many_tags.feature)
+- [UniqueScenarioNames: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/unique_scenario_names.feature)
+- [UnknownVariable: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/unknown_variable.feature)
+- [UnusedVariable: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/unused_variable.feature)
+- [UseBackground: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/use_background.feature)
+- [UseOutline: Disabled](https://github.com/prezi/gherkin_lint/blob/master/features/use_outline.feature)
+
+
+## Custom Checks
+
+- [PreziAvoidCharsInOutline: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_avoid_chars_in_outline.feature)
+- [PreziAvoidQuotes: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_avoid_quotes.feature)
+- [PreziAvoidStepsContaining: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_avoid_steps_containing.feature)
+- [PreziFeatureSwitchInsideFeature: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_fs_inside_feature.feature)
+- [PreziFSOnSeparateLines: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_fs_on_separate_lines.feature)
+- [PreziMissingPlatformTag: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_missing_platform_tag.feature)
+- [PreziMissingTeamTag:   Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_missing_team_tag.feature)
+- [PreziTagsFeatureSwitchOrder: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_tags_fs_order.feature)
+- [PreziTagsInsideFeature: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_tags_inside_feature.feature)
+- [PreziTagsOnSeparateLines: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_tags_on_separate_lines.feature)
+- [PreziUseGivenWhenThenOnce: Enabled](https://github.com/prezi/gherkin_lint/blob/master/features/prezi_use_given_when_then_once.feature)
 
 ## Errors and Warnings
 
@@ -70,14 +83,3 @@ These new checks will stay some releases as warning and will be later declared a
 ### Errors
 
 If there is at least one error, the returncode will be set to ERROR (!= 0).
-
-## Installation
-
-Install it with:
-
-`sudo gem install gherkin_lint`
-
-After that `gherkin_lint` executable is available.
-
-## Configuration
-If you have a custom configuration you'd like to run on a regular basis instead of passing enable and disable flags through the CLI on every run, you can configure a ```.gherkin_lint.yml``` file that will be loaded on execution.  The format and available linters are in [```config/default.yml```](config/default.yml)

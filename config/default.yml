@@ -3,7 +3,7 @@ AvoidOutlineForSingleExample:
 AvoidPeriod:
     Enabled: true
 AvoidScripting:
-    Enabled: true
+    Enabled: false
 BackgroundDoesMoreThanSetup:
     Enabled: true
 BackgroundRequiresMultipleScenarios:
@@ -13,11 +13,11 @@ BadScenarioName:
 BeDeclarative:
     Enabled: true
 FileNameDiffersFeatureName:
-    Enabled: true
+    Enabled: false
 MissingExampleName:
     Enabled: true
 MissingFeatureDescription:
-    Enabled: true
+    Enabled: false
 MissingFeatureName:
     Enabled: true
 MissingScenarioName:
@@ -30,6 +30,28 @@ InvalidFileName:
     Enabled: true
 InvalidStepFlow:
     Enabled: true
+PreziAvoidCharsInOutline:
+    Enabled: true
+PreziAvoidQuotes:
+    Enabled: true
+PreziAvoidStepsContaining:
+    Enabled: true
+PreziFeatureSwitchInsideFeature:
+    Enabled: true
+PreziFSOnSeparateLines:
+    Enabled: true
+PreziMissingPlatformTag:
+      Enabled: true
+PreziMissingTeamTag:
+      Enabled: true
+PreziTagsFeatureSwitchOrder:
+    Enabled: true
+PreziTagsInsideFeature:
+    Enabled: true
+PreziTagsOnSeparateLines:
+    Enabled: true
+PreziUseGivenWhenThenOnce:
+    Enabled: true
 RequiredTagsStartsWith:
     Enabled: false
 SameTagForAllScenarios:
@@ -37,9 +59,9 @@ SameTagForAllScenarios:
 TagUsedMultipleTimes:
     Enabled: true
 TooClumsy:
-    Enabled: true
+    Enabled: false
 TooManyDifferentTags:
-    Enabled: true
+    Enabled: false
 TooManySteps:
     Enabled: true
 TooManyTags:
@@ -55,4 +77,4 @@ UnusedVariable:
 UseBackground:
     Enabled: true
 UseOutline:
-    Enabled: true
+    Enabled: false

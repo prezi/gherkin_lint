@@ -30,10 +30,12 @@ Feature: Be Declarative
     When I run `ruby lint.rb`
     Then it should pass with exactly:
       """
-      BeDeclarative (Warning) - no verb
+      BeDeclarative (Warning) - Missing verb
         lint.feature (3): Test.A step: a number 1
-      BeDeclarative (Warning) - no verb
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-BeDeclarative
+      BeDeclarative (Warning) - Missing verb
         lint.feature (4): Test.A step: another number 2
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-BeDeclarative
 
       """
 

@@ -32,20 +32,16 @@ Feature: Too Many Different Tags
 
         @G @H
         Scenario: A
-
-        @I @J
-        Scenario: A
-
-        @K @L
-        Scenario: A
       """
     When I run `ruby lint.rb`
-    Then it should fail with exactly:
+    Then it should pass with exactly:
       """
-      TooManyDifferentTags - Used 12 Tags within single Feature
+      TooManyDifferentTags (Warning) - Used 8 Tags within single Feature
         lint.feature (1): Test
-      TooManyDifferentTags - Used 12 Tags across all Features
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-TooManyDifferentTags
+      TooManyDifferentTags (Warning) - Used 8 Tags across all Features
         lint.feature (1): Test
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-TooManyDifferentTags
 
       """
 

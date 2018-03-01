@@ -9,9 +9,9 @@ module GherkinLint
     def lint
       scenarios do |file, feature, scenario|
         tags = gather_tags(feature) + gather_tags(scenario)
-        next unless tags.length >= 3
+        next unless tags.length >= 6
         references = [reference(file, feature, scenario)]
-        add_error(references, "Used #{tags.length} Tags")
+        add_warning(references, "Used #{tags.length} Tags")
       end
     end
   end

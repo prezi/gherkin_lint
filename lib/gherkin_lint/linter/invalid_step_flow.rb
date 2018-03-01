@@ -32,7 +32,7 @@ module GherkinLint
       steps.each do |step|
         break if step[:keyword] == 'When '
         references = [reference(file, feature, scenario, step)]
-        add_error(references, 'Missing Action') if step[:keyword] == 'Then '
+        add_warning(references, 'Missing Action before Then') if step[:keyword] == 'Then '
       end
     end
   end

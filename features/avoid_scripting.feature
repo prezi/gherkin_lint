@@ -32,6 +32,7 @@ Feature: Avoid Scripting
       """
       AvoidScripting - Multiple Actions
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-AvoidScripting
 
       """
 
@@ -51,6 +52,7 @@ Feature: Avoid Scripting
       """
       AvoidScripting - Multiple Actions
         lint.feature (2): Test.A
+        https://prezidoc.atlassian.net/wiki/spaces/WEB/pages/270632203/Gherkin+Linter#GherkinLinter-AvoidScripting
 
       """
 
